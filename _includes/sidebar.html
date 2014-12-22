@@ -6,6 +6,11 @@
 		IIEST Shibpur
 	</p>
 	<ul class="sidebar-nav">
+		<a class="page-link" href="{{ site.baseurl }}">
+			<li>
+				Home
+			</li>
+		</a>
 		{% for page in site.pages %}
 		{% if page.title %}
 		<a class="page-link" href="{{ page.url | prepend: site.baseurl }}">
