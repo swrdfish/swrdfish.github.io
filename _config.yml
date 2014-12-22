@@ -12,3 +12,6 @@ github_username:  ghoshbinayak
 markdown: kramdown
 safe: true
 exclude: ['README.md', 'dayDreams.sublime-project']
+paginate: 10
+permalink: /:year/:month/:day/:title/
+paginate_path: /page:num
