@@ -98,10 +98,17 @@
 }
 
 .site-sidebar {
-    position: absolute;
-    width: 250px;
+    position: fixed;
+    width: 22%;
     background: none repeat scroll 0% 0% #1A1A1A;
     height: 100vh;
+}
+
+.sidebar-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
 }
 
 .site-sidebar p {
@@ -144,23 +151,29 @@ a.page-link:hover {
     color: #2A7AE2;
 }
 
+.sidebar-footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+}
+
+
 .social-icon {
     width: 30px;
     height: 30px;
-    padding: 25px;
+    padding: 15px;
     padding-bottom: 0;
     text-align: center;
     fill: black;
+    display: inline;
 }
 
 .social-icon:hover {
     fill: #2A7AE2;
 }
 
-.sidebar-footer {
-    position: fixed;
-    bottom: 0;
-}
+
 
 /**
  * Site footer
@@ -236,11 +249,20 @@ a.page-link:hover {
  * Page content
  */
 .page-content {
-    padding: $spacing-unit 0;
+    padding: 0px;
+    width: 78%;
+    float: right;
 }
 
 .page-heading {
-    font-size: 20px;
+    font-size: 4em;
+    font-family: "Maven Pro",sans-serif;
+    color: #747474;
+    margin-bottom: 30px;
+}
+
+.post {
+    margin-top: 50px;
 }
 
 .post-list {
@@ -248,13 +270,14 @@ a.page-link:hover {
     list-style: none;
 
     > li {
-        margin-bottom: $spacing-unit;
+        margin-bottom: 40px;
     }
 }
 
 .post-meta {
-    font-size: $small-font-size;
-    color: $grey-color;
+    font-size: 14px;
+    color: #828282;
+    display: inline-block;
 }
 
 .post-link {
@@ -262,6 +285,9 @@ a.page-link:hover {
     font-size: 24px;
 }
 
+a.post-link:hover {
+    color: #2a7ae2;
+}
 
 
 /**
