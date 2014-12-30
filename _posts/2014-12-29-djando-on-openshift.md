@@ -119,15 +119,15 @@ if __name__ == '__main__':
 ### 8.Commit all the changes and push to Openshift ###
 Commit all files in `mydjangoapp` to a git repo.
 {% highlight bash %}
-    git init
-    git add *
-    git commit -m'initial commit'
+git init
+git add *
+git commit -m'initial commit'
 {% endhighlight %}
 
 Then push this repo to Openshift
 {% highlight bash %}
-    git remote add openshift <git url of mypythonapp>
-    git push openshift
+git remote add openshift <git url of mypythonapp>
+git push openshift
 {% endhighlight %}
 
 
