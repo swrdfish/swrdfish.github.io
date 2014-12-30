@@ -55,8 +55,9 @@ Copy the following from the cloned source of your Openshift app to the root of t
 
 ### 7.Ceate the app.py file ###
 OpenShift runs this app.py file as the entry point into the app. We are using gunicorn so we need to start gunicorn server from here. To do this follow the instructions in the following links:
- + [Getting Started with Python 2.6, 2.7, and 3.3)](https://developers.openshift.com/en/python-getting-started.html#step4)
- + [Gunicorn Custom Application](http://gunicorn-docs.readthedocs.org/en/latest/custom.html)
+
++ [Getting Started with Python 2.6, 2.7, and 3.3)](https://developers.openshift.com/en/python-getting-started.html#step4)
++ [Gunicorn Custom Application](http://gunicorn-docs.readthedocs.org/en/latest/custom.html) 
 
 The final app.py file will look something like this
 {% highlight python %}
