@@ -7,7 +7,7 @@ published: True
 
 ---
 
-So I have got my django app running on Openshift. ([how to run django app on Openshift]({% post_url 2014-12-29-djando-on-openshift %}))
+So I have got my django app running on Openshift. ([how to run django app on Openshift]({% post_url 2014-12-29-django-on-openshift %}))
 Now I wanted to automate the deployment of the app from a Github repo. The tool people use to do this is called Jenkins. So here's the rundown of what I have been able to achieve. 
 
 
