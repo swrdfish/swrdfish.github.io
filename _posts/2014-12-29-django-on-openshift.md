@@ -1,6 +1,6 @@
 ---
 layout: post
-title: djando on Openshift
+title: django on Openshift
 categories: [web-development, ]
 tags: [django, openshift]
 published: True
