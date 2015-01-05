@@ -135,6 +135,9 @@ git push openshift
 {% endhighlight %}
 
 
+### 9.Adding environment variables if necessary ###
+Follow the instructions [here](https://help.openshift.com/hc/en-us/articles/202399310-How-to-create-and-use-environment-variables-on-the-server-){: target blank}
+
 
 
 And that should do the job.
