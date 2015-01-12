@@ -39,13 +39,23 @@ default_user = binayak      # put your username here
 default_pass = hello        # set a desired password
 {% endhighlight %}
 
-And also add the `SOCKS5_PASSWORD` environment variable:
+And also add the `SOCKS5_PASSWORD` environment variable( in `~/.bashrc` file):
 {% highlight bash %}
 export SOCKS5_PASSWORD="hello"
 {% endhighlight %}
 
 
-### 4. To get the git:// protocol working with tor follow the link below:
-[https://oniondigest.wordpress.com/2010/04/16/using-git-with-tor/](https://oniondigest.wordpress.com/2010/04/16/using-git-with-tor/)
+### 4. Get the git:// protocol working with tor:
+Create a file `~/.torgit` and put the following there
+{% highlight bash %}
+#!/bin/sh
+exec connect -5 -S localhost:9050 "$@"
+{% endhighlight %}
+
+And add the `GIT_PROXY_COMMAND` environment variable ( in `~/.bashrc` file):
+{% highlight bash %}
+export GIT_PROXY_COMMAND=~/.torgit
+{% endhighlight %}
+[Source](https://oniondigest.wordpress.com/2010/04/16/using-git-with-tor/)
 
 Yup thats all there is to it..
