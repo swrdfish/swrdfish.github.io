@@ -44,4 +44,8 @@ And also add the `SOCKS5_PASSWORD` environment variable:
 export SOCKS5_PASSWORD="hello"
 {% endhighlight %}
 
+
+### 4. To get the git:// protocol working with tor follow the link below:
+[https://oniondigest.wordpress.com/2010/04/16/using-git-with-tor/](https://oniondigest.wordpress.com/2010/04/16/using-git-with-tor/)
+
 Yup thats all there is to it..
