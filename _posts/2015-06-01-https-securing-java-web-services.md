@@ -23,6 +23,9 @@ If we inspect the packets using wireshark (as seen in the screenshot below) we c
 <a class="img_tag" href="{{site.url}}/assets/ssl/wireshark_http_raw_post.png">
 	![Wireshark http raw post data]({{site.url}}/assets/ssl/wireshark_http_raw_post.png)
 </a>
+<a class="img_tag" href="{{site.url}}/assets/ssl/wireshark_http_raw_post2.png">
+	![Wireshark http raw post data]({{site.url}}/assets/ssl/wireshark_http_raw_post2.png)
+</a>
 
 Now lets check login to the same website with https enabled and inspect the packets:
 <a class="img_tag" href="{{site.url}}/assets/ssl/wireshark_https_raw_post.png">
