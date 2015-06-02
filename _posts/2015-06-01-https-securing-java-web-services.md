@@ -120,3 +120,15 @@ and copies its pending write state into the current write state.
 At this point in time, the SSL handshake is complete and the client and
 server may begin exchanging application layer protocol data units (using the SSL
 Application Data Protocol).
+
+
+Now lets look into the handshake process using wireshark:
+<a class="img_tag" href="{{site.url}}/assets/ssl/wireshark_https_raw_post3.png">
+	![Wireshark SSL handshake]({{site.url}}/assets/ssl/wireshark_https_raw_post3.png)
+</a>
+<a class="img_tag" href="{{site.url}}/assets/ssl/wireshark_ssl_certificate.png">
+	![Wireshark SSL certificate]({{site.url}}/assets/ssl/wireshark_ssl_certificate.png)
+</a>
+
+
+### A few words about certificates:
