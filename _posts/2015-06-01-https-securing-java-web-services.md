@@ -123,12 +123,23 @@ Application Data Protocol).
 
 
 Now lets look into the handshake process using wireshark:
-<a class="img_tag" href="{{site.url}}/assets/ssl/wireshark_https_raw_post3.png">
-	![Wireshark SSL handshake]({{site.url}}/assets/ssl/wireshark_https_raw_post3.png)
+<a class="img_tag" href="{{site.url}}/assets/ssl/wireshark_ssl_handshake.png">
+	![Wireshark SSL handshake]({{site.url}}/assets/ssl/wireshark_ssl_handshake.png)
 </a>
 <a class="img_tag" href="{{site.url}}/assets/ssl/wireshark_ssl_certificate.png">
 	![Wireshark SSL certificate]({{site.url}}/assets/ssl/wireshark_ssl_certificate.png)
 </a>
+<a class="img_tag" href="{{site.url}}/assets/ssl/wireshark_https_raw_post3.png">
+	![Wireshark SSL data]({{site.url}}/assets/ssl/wireshark_https_raw_post3.png)
+</a>
 
 
 ### A few words about certificates:
+As described earlier the ssl protocol requires that the communicating peers verify their identity using digitally signed certificates. These certificates are generally issued by some trusted certifying authority(CA) which guarantees the identity of the senders. 
+
+The most commonly used format for exchanging these certificates is the [X.509](http://en.wikipedia.org/wiki/X.509) format.
+<a class="img_tag" href="{{site.url}}/assets/ssl/certificate_struct.png">
+	![x509 certificate]({{site.url}}/assets/ssl/certificate_struct.png)
+</a>
+
+There is another type of cerificate scheme which is gaining popularity called the [PGP](http://en.wikipedia.org/wiki/Pretty_Good_Privacy).
