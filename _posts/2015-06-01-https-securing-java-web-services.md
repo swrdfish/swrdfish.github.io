@@ -16,20 +16,20 @@ This can be demonstrated using free and opensource tools like [Wireshark](https:
 
 <h4>Demo:</h4>
 Lets login to a website which does not use https to secure the connection using wireshark.
-<a href="{{site.url}}/assets/ssl/wireshark_http_raw.png">
+<a class="img_tag" href="{{site.url}}/assets/ssl/wireshark_http_raw.png">
 	![Wireshark http raw]({{site.url}}/assets/ssl/wireshark_http_raw.png)
 </a>
 If we inspect the packets using wireshark (as seen in the screenshot below) we can easily see the data sent to the server, which in this case are the email and password of the user. Hence anyone who can tap into the network can easily get hold of the login credentials and there by the users authenticity is compromised. 
-<a href="{{site.url}}/assets/ssl/wireshark_http_raw_post.png">
+<a class="img_tag" href="{{site.url}}/assets/ssl/wireshark_http_raw_post.png">
 	![Wireshark http raw post data]({{site.url}}/assets/ssl/wireshark_http_raw_post.png)
 </a>
 
 Now lets check login to the same website with https enabled and inspect the packets:
-<a href="{{site.url}}/assets/ssl/wireshark_https_raw_post.png">
+<a class="img_tag" href="{{site.url}}/assets/ssl/wireshark_https_raw_post.png">
 	![Wireshark post data using https]({{site.url}}/assets/ssl/wireshark_https_raw_post.png)
 </a>
 As you can see from the image below, this time the data sent to the server is encrypted; i.e. the user's credentials are safe.
-<a href="{{site.url}}/assets/ssl/wireshark_ssl_encrypted_data.png">
+<a class="img_tag" href="{{site.url}}/assets/ssl/wireshark_ssl_encrypted_data.png">
 	![Wireshark ssl encrypted data]({{site.url}}/assets/ssl/wireshark_ssl_encrypted_data.png)
 </a>
 
@@ -37,11 +37,11 @@ So, HTTP by default is not suitable for sending private data. For this we need s
 
 ### What is TLS/SSL?
 The required data security/encryption can be provided by many mechanisms, but TLS/SSL has become the ubiquitous defacto standard for the Internet. SSL stands for Secure Socket Layer and TLS is Transport Layer Security. Both are more or less the same specifications with minor differences which we can generally ignore. 
-<a href="{{site.url}}/assets/ssl/security_layers.png">
+<a class="img_tag" href="{{site.url}}/assets/ssl/security_layers.png">
 	![Security protocols in different layers]({{site.url}}/assets/ssl/security_layers.png)
 </a>
 
-<a href="{{site.url}}/assets/ssl/ssl_stack.png">
+<a class="img_tag" href="{{site.url}}/assets/ssl/ssl_stack.png">
 	![SSL in the IP stack]({{site.url}}/assets/ssl/ssl_stack.png)
 </a>
 As we can see from the above figure, the ssl/tls acts as a layer on top of the transport layer in the IP stack. The connection between the communicating peers is provided by TCP. SSL/TLS acts as a layer in between the transport and application layers and encrypts the data passing through the connection.
@@ -51,13 +51,13 @@ As we can see from the above figure, the ssl/tls acts as a layer on top of the t
 Broadly speaking there are two kinds of cryptographic techniques used to encrypt data in  SSL: symmetric key and asymmetric key cryptography.
 
 <h4>Symmetric key or secret key cryprography:</h4>
-<a href="{{site.url}}/assets/ssl/symmetric_crypto_system.png">
+<a class="img_tag" href="{{site.url}}/assets/ssl/symmetric_crypto_system.png">
 	![Secret key cryptography]({{site.url}}/assets/ssl/symmetric_crypto_system.png)
 </a>
 As shown in the figure above, in case of symmetric key cryptography, both the sender and receiver have the same secret key which is used to both encode and decode the data. This technique is fine but we need a way to securely share the secret key. 
 
 <h4>Assymetric key or public key cryptography:</h4>
-<a href="{{site.url}}/assets/ssl/asymmetric_crypto_system.png">
+<a class="img_tag" href="{{site.url}}/assets/ssl/asymmetric_crypto_system.png">
 	![Public key cryptography]({{site.url}}/assets/ssl/asymmetric_crypto_system.png)
 </a>
 
@@ -68,11 +68,11 @@ Hence, in this case the problem of sharing a secret is taken care off.
 
 
 ### A basic overview of TLS/SSL:
-<a href="{{site.url}}/assets/ssl/ssl_stack.png">
+<a class="img_tag" href="{{site.url}}/assets/ssl/ssl_stack.png">
 	![SSL in the IP stack]({{site.url}}/assets/ssl/ssl_stack.png)
 </a>
 <em>Note: Public key encryption is more computationally intensive than Secret key encryption. Hence in case of SSL, public key encryption is used to share the secret. This secret is then used to encrypt the data.</em>
-<a href="{{site.url}}/assets/ssl/ssl_stack.png">
+<a class="img_tag" href="{{site.url}}/assets/ssl/ssl_stack.png">
 	![SSL handshake]({{site.url}}/assets/ssl/ssl_stack.png)
 </a>
 
