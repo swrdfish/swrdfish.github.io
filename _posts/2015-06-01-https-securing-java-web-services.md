@@ -75,8 +75,8 @@ Hence, in this case the problem of sharing a secret is taken care off.
 	![SSL in the IP stack]({{site.url}}/assets/ssl/ssl_stack.png)
 </a>
 <em>Note: Public key encryption is more computationally intensive than Secret key encryption. Hence in case of SSL, public key encryption is used to share the secret. This secret is then used to encrypt the data.</em>
-<a class="img_tag" href="{{site.url}}/assets/ssl/ssl_stack.png">
-	![SSL handshake]({{site.url}}/assets/ssl/ssl_stack.png)
+<a class="img_tag" href="{{site.url}}/assets/ssl/ssl_handshake.png">
+	![SSL handshake]({{site.url}}/assets/ssl/ssl_handshake.png)
 </a>
 
 <h4> The first set of messages is sent from the client to the server.</h4>
