@@ -143,3 +143,14 @@ The most commonly used format for exchanging these certificates is the [X.509](h
 </a>
 
 There is another type of cerificate scheme which is gaining popularity called the [PGP](http://en.wikipedia.org/wiki/Pretty_Good_Privacy).
+
+
+### References and Reading material:
+
++ [Applied Cryptography, Second Edition: Protocols, Algorthms, and Source Code in C]({{site.url}}/assets/ssl/AppliedCryptography.pdf)
+
++ [SSL and TLS Theory and Practice]({{site.url}}/assets/ssl/SSLandTLSTheoryandPractice.pdf)
+
++ [Wireshark Network Analysis]({{site.url}}/assets/ssl/WiresharkNetworkAnalysis.pdf)
+
++ [Java Web Services]({{site.url}}/assets/ssl/JavaWebServices.pdf)
