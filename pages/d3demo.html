@@ -3,26 +3,10 @@ layout: default
 title: Archive
 permalink: /d3demo/
 ---
-
-<style>
-
-.node {
-  stroke: #fff;
-  stroke-width: 1.5px;
-}
-
-.link {
-  stroke: #999;
-  stroke-opacity: .6;
-}
-
-</style>
-<body>
-    <h2> D3 Demo using Force directed graph </h2>
-    <p> The data received from the <a href="https://www.targetvalidation.org/" target"blank">CTTV</a> platform, shows target associations to a particular disease (in this case asthma ). </p>
+<h2> D3 Demo using Force directed graph </h2>
+<p> The data received from the <a href="https://www.targetvalidation.org/" target"blank">CTTV</a> platform, shows target associations to a particular disease (in this case asthma ). </p>
 <script src="//d3js.org/d3.v3.min.js"></script>
 <script>
-
 var width = 960,
     height = 500;
 
@@ -98,4 +82,3 @@ d3.json("https://www.targetvalidation.org/api/latest/association?disease=EFO_000
 });
 
 </script>
-</body>
