@@ -51,7 +51,6 @@ d3.json("https://www.targetvalidation.org/api/latest/association?disease=EFO_000
   var links = [];
   for(var iii =0; iii<400; iii++){
     link = {"source": iii, "target": 400, "value": graph[iii].association_score};
-    console.log(link);
     links.push(link);
   }
 
