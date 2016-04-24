@@ -184,7 +184,6 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
-
 .main-container {
     overflow: hidden;
     position: relative;
@@ -225,7 +224,22 @@ svg {
 }
 
 .post-separator {
-    height: 100px;
+    height: 50px;
+}
+
+.pagination {
+    display: inline-block;
+    color: #777;
+    background-color: #fff;
+    border-color: #ddd;
+    border: 1px solid #ddd;
+    padding: 0 10px;
+    margin: 10px;
+    border-radius: 3px;
+
+    @media screen and (max-width: 600px) {
+        padding: 0 3px;
+    }
 }
 
 /**
@@ -235,7 +249,7 @@ svg {
     width: 100%;
     text-align: center;
     overflow: hidden;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 .profile-pic {

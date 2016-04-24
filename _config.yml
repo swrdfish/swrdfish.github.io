@@ -4,9 +4,9 @@ email: ghoshbinayak@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Musings, Learnings, Experiences.
 baseurl: "" # the subpath of your site, e.g. /blog/
-#url: "http://ghoshbinayak.github.io" # the base hostname & protocol for your site
+#url: "http://swrdfish.github.io" # the base hostname & protocol for your site
 url: "http://127.0.0.1:4000"
-github_username:  ghoshbinayak
+github_username:  swrdfish
 twitter_username: binayak_ghosh
 facebook_username: ghoshbinayak
 
@@ -20,7 +20,10 @@ permalink: /:year/:month/:day/:title/
 paginate_path: /page:num
 
 # Collections
-collections:
--   pages
--   work
--   hobby
+collections: 
+  work:
+    output: false
+  hobby:
+    output: false
+  pages:
+    output: true
