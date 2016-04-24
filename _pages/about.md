@@ -6,7 +6,7 @@ permalink: /about/
 
 ## Hi, ##
 
-I'm Binayak Ghosh and this is my blog ***dayDream*** where I document the stuff that do.
+I'm Binayak Ghosh and this is my blog ***Toys in the Attic*** where I document the stuff that do.
 
 
 ## Facts about me ##
