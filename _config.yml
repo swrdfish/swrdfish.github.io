@@ -4,8 +4,8 @@ email: ghoshbinayak@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Musings, Learnings, Experiences.
 baseurl: "" # the subpath of your site, e.g. /blog/
-#url: "http://swrdfish.github.io" # the base hostname & protocol for your site
-url: "http://127.0.0.1:4000"
+url: "http://swrdfish.github.io" # the base hostname & protocol for your site
+# url: "http://127.0.0.1:4000"
 github_username:  swrdfish
 twitter_username: binayak_ghosh
 facebook_username: ghoshbinayak
