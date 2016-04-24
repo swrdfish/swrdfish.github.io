@@ -223,8 +223,22 @@ svg {
     height: 1em;
 }
 
+
+.page-title {
+    text-align: center;
+}
+
 .post-separator {
     height: 50px;
+}
+
+.meta-container {
+    margin-top: -5px;
+    margin-bottom: 10px;
+}
+
+.disqus-comment-count {
+  color: #ADADAD;
 }
 
 .pagination {
