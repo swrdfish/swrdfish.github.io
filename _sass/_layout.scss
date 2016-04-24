@@ -285,3 +285,40 @@ svg {
     font-size: 1.8em;
     color: black;
 }
+
+/**
+ * Archive 
+ **/
+
+.archive-list {
+  li {
+    overflow: hidden;
+    list-style: none;
+    
+    .bullet {
+      width: 5%;
+      float:left;
+      transform: translateY(-8%);
+      line-height: 1;
+    }
+
+    .archive-title {
+      width: 70%;
+      float: left;
+      text-align: left;
+      @media screen and (max-width: 600px) {
+        width: 85%;
+      }
+
+    }
+
+    .archive-date {
+      width: 25%;
+      float: right;
+      text-align: right;
+      @media screen and (max-width: 600px) {
+          display: none;
+      }
+    }
+  }
+}

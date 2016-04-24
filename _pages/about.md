@@ -4,9 +4,8 @@ title: About
 permalink: /about/
 ---
 
-## Hi, ##
+Hi, I'm Binayak, a developer in the making, a art and design enthusiast, a wannabe entrepreneur and an utterly confused person. 
 
-I'm Binayak Ghosh and this is my blog ***Toys in the Attic*** where I document the stuff that do.
 
 
 ## Facts about me ##
