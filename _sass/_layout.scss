@@ -229,14 +229,13 @@ svg {
 
 .pagination {
     display: inline-block;
-    color: #777;
-    background-color: #fff;
-    border-color: #ddd;
-    border: 1px solid #ddd;
+    color: #505050;
+    background-color: #F2F2F2;
+    border: 1px solid #CBCBCB;
     padding: 0 10px;
     margin: 10px;
-    border-radius: 3px;
-
+    border-radius: 5px;
+    box-shadow: -5px 4px 10px #D6D6D6;
     @media screen and (max-width: 600px) {
         padding: 0 3px;
     }
