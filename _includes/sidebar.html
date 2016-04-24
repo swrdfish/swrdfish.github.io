@@ -1,11 +1,13 @@
 <div class="site-sidebar">
-	<img class="profile-pic" src="{{ site.baseurl }}/assets/swordfish.svg">
-	<div class="site-name"> {{ site.title }}</div>
+	<a id="site-brand" href="{{ site.url }}">
+		<img class="profile-pic" src="{{ site.baseurl }}/assets/swordfish.svg">
+		<div class="site-name"> {{ site.title }}</div>
+	</a>
 	<ul class="sidebar-nav">
-				<a class="page-link" href="{{ site.url }}">home</a> &nbsp;&nbsp;
-				<a class="page-link" href="{{ site.url }}/work">work</a> &nbsp;&nbsp;
-				<a href="{{ site.url }}/hobby">hobby</a> &nbsp;&nbsp;
-				<a href="{{ site.url }}/archive">archive</a> &nbsp;&nbsp;
-				<a href="{{ site.url }}/about">about</a> &nbsp;&nbsp;
+		<a class="page-link" href="{{ site.url }}">home</a> &nbsp;&nbsp;
+		<a class="page-link" href="{{ site.url }}/work">work</a> &nbsp;&nbsp;
+		<a href="{{ site.url }}/hobby">hobby</a> &nbsp;&nbsp;
+		<a href="{{ site.url }}/archive">archive</a> &nbsp;&nbsp;
+		<a href="{{ site.url }}/about">about</a> &nbsp;&nbsp;
 	</ul>
 </div>
