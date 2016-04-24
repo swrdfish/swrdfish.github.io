@@ -189,7 +189,7 @@
     position: relative;
     margin: 0 auto;
     max-width: 650px;
-    width: 90%;
+    width: 85%;
     padding: 10px 20px;
 }
 
@@ -217,6 +217,10 @@
     background: pink;
 }
 
+h2 {
+  line-height: 1.5em;
+}
+
 svg {
     display: inline;
     width: 1em;
@@ -229,12 +233,11 @@ svg {
 }
 
 .post-separator {
-    height: 50px;
+    height: 120px;
 }
 
 .meta-container {
-    margin-top: -5px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .disqus-comment-count {
@@ -262,7 +265,7 @@ svg {
     width: 100%;
     text-align: center;
     overflow: hidden;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .profile-pic {
