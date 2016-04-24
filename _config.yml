@@ -22,8 +22,8 @@ paginate_path: /page:num
 # Collections
 collections: 
   work:
-    output: false
+    output: true
   hobby:
-    output: false
+    output: true
   pages:
     output: true
