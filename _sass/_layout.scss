@@ -196,10 +196,10 @@
 .page-content {
     width: 100%;
     font-family: Roboto, sans-serif;
-    color: #666;
+    color: #333;
     h2 {
         a {
-            color: #6c6c6c;
+            color: #444;
             font-family: Montserrat;
             font-weight: bold;
             font-size: 1.2em;
@@ -214,7 +214,7 @@
 
 .post-meta {
     color: #FFF;
-    background: pink;
+    background: #feb9c5;
 }
 
 h1, h2 {
@@ -233,7 +233,7 @@ svg {
 }
 
 .post-separator {
-    height: 120px;
+    height: 100px;
 }
 
 .meta-container {
