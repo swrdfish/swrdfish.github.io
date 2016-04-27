@@ -11,7 +11,7 @@ twitter_username: binayak_ghosh
 facebook_username: ghoshbinayak
 
 # Build settings
-gems: [jekyll-paginate]
+gems: [jekyll-paginate, jekyll-assets]
 markdown: kramdown
 safe: false
 exclude: ['README.md']
@@ -27,3 +27,9 @@ collections:
     output: true
   pages:
     output: true
+
+# Jekyll assets setup
+assets:
+  compress:
+    css: scss
+    js: uglify
