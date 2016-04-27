@@ -9,7 +9,7 @@ Hi, I'm Binayak, a developer in the making, a art and design enthusiast, a wanna
 *** Toys in the Attic *** is a place where I intend to documet my journey through the digital world. Ideally (such is not the case.. yet) my projects and learnings will be documeted here so that I can have them as a reference for future projects. 
 
 
-<div style="width: 50%; float: left">
+<div class="col-left">
 
 <h2> Facts </h2>
 <ul>

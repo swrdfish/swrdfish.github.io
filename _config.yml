@@ -11,7 +11,7 @@ twitter_username: binayak_ghosh
 facebook_username: ghoshbinayak
 
 # Build settings
-gems: [jekyll-paginate, jekyll-assets]
+gems: [jekyll-paginate, octopress-minify-html]
 markdown: kramdown
 safe: false
 exclude: ['README.md']
@@ -28,8 +28,5 @@ collections:
   pages:
     output: true
 
-# Jekyll assets setup
-assets:
-  compress:
-    css: scss
-    js: uglify
+# octopress minify html
+minify_html: false
