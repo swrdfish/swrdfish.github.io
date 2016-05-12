@@ -256,12 +256,12 @@ svg {
 
 .pagination {
     display: inline-block;
-    color: #505050;
-    background-color: #F2F2F2;
+    color: #FFF;
+    background-color: #848484;
     border: 1px solid #CBCBCB;
     padding: 0 10px;
     margin: 10px;
-    border-radius: 5px;
+    border-radius: 18px;
     box-shadow: -5px 4px 10px #D6D6D6;
     @media screen and (max-width: 600px) {
         padding: 0 3px;
