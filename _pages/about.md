@@ -23,6 +23,9 @@ Hi, I'm Binayak, a developer in the making, a art and design enthusiast, a wanna
 	<li>
 		likes to build stuff
 	</li>	
+	<li>
+		<a href="/assets/binayak_resume.pdf" title="resume">resume</a>
+	</li>	
 </ul>
 
 </div>
