@@ -17,14 +17,18 @@ Hi, I'm Binayak, a developer in the making, a art and design enthusiast, a wanna
 		lives in Kolkata
 	</li>
 	<li> 
-		goes to <a href="https://en.wikipedia.org/wiki/" title="Indian_Institute_of_Engineering_Science_and_Technology,_Shibpur" target="_blank">IIEST Shibpur</a>
+		went to <a href="https://en.wikipedia.org/wiki/" title="Indian_Institute_of_Engineering_Science_and_Technology,_Shibpur" target="_blank">IIEST Shibpur</a>
 		
+	</li>
+	
+	<li>
+		works at Lexmark ( Enterprise Software Division )
 	</li>
 	<li>
 		likes to build stuff
 	</li>	
 	<li>
-		<a href="/assets/binayak_resume.pdf" title="resume">resume</a>
+		<a href="https://drive.google.com/file/d/0ByDg-Gm2ekzbLW43c1ljUUVMcHM/view?usp=sharing" title="resume">resume</a>
 	</li>	
 </ul>
 
