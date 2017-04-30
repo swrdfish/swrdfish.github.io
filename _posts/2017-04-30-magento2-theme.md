@@ -36,3 +36,5 @@ To remove `styles-l.css` and `styles-m.css` include the following lines in the h
 ```
 
 _Note: If you have installed sample data, then there will be one more styles.css included. To remove it go to the admin panel, `Content -> Configuration -> Edit`  and then make sure the Scripts and Style Sheets field in the HTML Head section is blank_
+
+# Now flush the cache and see if the changes. 
