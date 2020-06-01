@@ -151,6 +151,6 @@ There is another type of cerificate scheme which is gaining popularity called th
 
 + [SSL and TLS Theory and Practice]({{site.url}}/assets/ssl/SSLandTLSTheoryandPractice.pdf)
 
-+ [Wireshark Network Analysis]({{site.url}}/assets/ssl/WiresharkNetworkAnalysis.pdf)
++ [Wireshark Network Analysis](https://www.amazon.in/Wireshark-Network-Analysis-Second-Certified-ebook/dp/B008G65O7O)
 
 + [Java Web Services]({{site.url}}/assets/ssl/JavaWebServices.pdf)
