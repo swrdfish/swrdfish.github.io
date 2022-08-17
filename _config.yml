@@ -17,6 +17,7 @@ safe: false
 exclude: ['README.md']
 paginate: 10
 permalink: /:year/:month/:day/:title/
+plugins: [jekyll-paginate]
 paginate_path: /page:num
 
 # Collections

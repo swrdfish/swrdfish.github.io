@@ -4,32 +4,28 @@ title: About
 permalink: /about/
 ---
 
-Hi, I'm Binayak, a developer in the making, a art and design enthusiast, a wannabe entrepreneur and an utterly confused person. 
+A developer in the making, a art and design enthusiast, a wannabe entrepreneur and an utterly confused person. 
 
-*** Toys in the Attic *** is a place where I intend to documet my journey through the digital world. Ideally (such is not the case.. yet) my projects and learnings will be documeted here so that I can have them as a reference for future projects. 
-
+Current Hobbies:
+- Economics
+- Guitar
 
 <div class="col-left">
 
 <h2> Facts </h2>
 <ul>
 	<li>
-		lives in Kolkata
+		lives in <a href="https://en.wikipedia.org/wiki/Santiniketan" title="Santiniketan" target="_blank">Santiniketan</a>
 	</li>
 	<li> 
-		went to <a href="https://en.wikipedia.org/wiki/" title="Indian_Institute_of_Engineering_Science_and_Technology,_Shibpur" target="_blank">IIEST Shibpur</a>
-		
-	</li>
-	
-	<li>
-		works at Lexmark ( Enterprise Software Division )
+		went to <a href="https://en.wikipedia.org/wiki/" title="Indian_Institute_of_Engineering_Science_and_Technology, Shibpur" target="_blank">IIEST Shibpur</a>
 	</li>
 	<li>
-		likes to build stuff
-	</li>	
+		works at <a href="https://www.browserstack.com/careers" title="Browserstack" target="_blank">Browserstack</a>
+	</li>
 	<li>
-		<a href="https://drive.google.com/file/d/0ByDg-Gm2ekzbLW43c1ljUUVMcHM/view?usp=sharing" title="resume">resume</a>
-	</li>	
+		likes to travel
+	</li>
 </ul>
 
 </div>
@@ -39,7 +35,7 @@ Hi, I'm Binayak, a developer in the making, a art and design enthusiast, a wanna
 + github: [github.com/swrdfish](https://github.com/swrdfish)
 + facebook: [facebook.com/ghoshbinayak](https://www.facebook.com/ghoshbinayak)
 + instagram: [instagram.com/ghoshbinayak](https://www.instagram.com/ghoshbinayak)
-+ email: [ghoshbinayak@gmail.com](mailto:ghoshbinayak@gmail.com)
++ linkedin: [linkedin.com/in/ghoshbinayak/](https://www.linkedin.com/in/ghoshbinayak/)
 
  
 
