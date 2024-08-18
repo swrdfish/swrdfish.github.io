@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+<meta name="description" content="" />
+
+<title>
+    
+    using jenkins on openshift | Swrdfish
+    
+</title>
+
+<link rel="canonical" href="http://localhost:1313/posts/2015-01-03-using-jenkins-on-openshift/" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.a6824bbee0d90d5af09fed9b70395ce7076b615e315037455d903314e96ef91b.css" media="all">
+
+
+
+
+
+  </head>
+
+  
+
+  
+  
+  
+
+  <body class="auto">
+
+    <div class="content">
+      <header>
+        
+
+<div class="header">
+
+    
+
+    <h1 class="header-title">Swrdfish</h1>
+
+    <div class="flex">
+        
+
+        
+        
+      
+        <p class="small ">
+            <a href="/" >
+                /home
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/posts" >
+                /posts
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/about" >
+                /about
+            </a>
+        </p>
+        
+        
+    </div>
+
+    
+
+</div>
+
+      </header>
+
+      <main class="main">
+        
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/posts/">Posts</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/posts/2015-01-03-using-jenkins-on-openshift/">using jenkins on openshift</a>
+</div>
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title">using jenkins on openshift</h1>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2015-01-03T00:00:00&#43;00:00">January 3, 2015</time>
+      
+
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  <div class="single-content">
+    <p>So I have got my django app running on Openshift. ([how to run django app on Openshift]({% post_url 2014-12-29-django-on-openshift %}))
+Now I wanted to automate the deployment of the app from a Github repo. The tool people use to do this is called Jenkins. So here&rsquo;s the rundown of what I have been able to achieve.</p>
+<p>First of all I havent been able to automatically build the app for deployment. What I&rsquo;ve been able to do is setup a jenkins server, create a new job which receives an event from Github notifying a modification, after receiving which it simply pulls the changes from Github and pushes it to the Openshift server running the django app. On receiving the push the django app is rebuilt and deployed. Therefore I don&rsquo;t have to push the app to both Github and django. But it would be better to have continous integration as the Openshift server stops the django app during rebuild so it becomes unreachable. So next step would be to implement CI.</p>
+<p>#Steps to get Jenkins up and running</p>
+<p>###1. Create a jenkins app
+{% highlight bash %}
+rhc app create jenkins jenkins-1
+{% endhighlight %}</p>
+<p>###2. Login to the jenkins using ssh</p>
+<p>###3. Create a file <code>git-ssh.sh</code> in the data directory
+Create a file named <code>git-ssh.sh</code> in the <code>$OPENSHIFT_DATA_DIR</code> and put the following code inside it.</p>
+<p>{% highlight bash %}
+#!/bin/bash</p>
+<pre><code>ID_RSA=&quot;${OPENSHIFT_DATA_DIR}id_rsa&quot;
+KNOWN_HOSTS=&quot;${OPENSHIFT_DATA_DIR}known_hosts&quot;
+
+ssh -o UserKnownHostsFile=$KNOWN_HOSTS -i $ID_RSA $1 $2 
+</code></pre>
+<p>{% endhighlight %}</p>
+<p>###4. Generate ssh keys
+We need to generate the ssh keys needed for git pull/push to work.
+{% highlight bash %}
+ssh-keygen -t rsa
+{% endhighlight %}
+Enter the path to the id_rsa file pointed to by git-ssh.sh ie <code>${OPENSHIFT_DATA_DIR}id_rsa</code>
+Keep the passphrase field blank.</p>
+<p>###5. Put the public key on Github and Openshift
+Copy the public key just created and add it to the list of SSH keys in <a href="https://github.com/settings/ssh">Github</a> and <a href="https://openshift.redhat.com/app/console/settings">Openshift</a>.
+The public key is located at <code>${OPENSHIFT_DATA_DIR}id_rsa.pub</code></p>
+<p>###6. Now open your jenkins dashboard and create a new job
+Open the jenkins server that you just created on Openshift. Once you get to the dashboard, create a new job with the following properties:</p>
+<ul>
+<li><code>Item name: my-bldr</code> you can give any name you wish</li>
+<li><code>Build a free-style software project</code> select this option and click ok</li>
+<li><code>Application UUID: &lt;UUID of the gear you want to push to&gt;</code></li>
+<li><code>Builder Size: small </code></li>
+<li><code>Builder Timeout: 300000</code></li>
+<li><code>Builder Type: redhat-python-2.7</code></li>
+<li><code>Platfom: Linux</code></li>
+<li><code>Restrict where this project can be run</code> check this option</li>
+<li><code>Label Expression: master</code></li>
+<li><code>Source code management: Git</code></li>
+<li>Then enter the details of git repo you want to pull from</li>
+<li>We&rsquo;ll setup the trigger a little later</li>
+<li>Now add a Build script of type <code>Execute shell</code> and enter the following code there and save the job:
+{% highlight bash%}
+#/bin/bash</li>
+</ul>
+<p>echo &ldquo;Trying to push.. &quot;</p>
+<p>git checkout master</p>
+<p>git pull</p>
+<p>git push -f dest master</p>
+<p>{% endhighlight %}</p>
+<p>###7. Add to the list of khown hosts
+Login in to the jenkins server using ssh and then run the following commands:
+{% highlight bash%}
+export GIT_SSH=${OPENSHIFT_DATA_DIR}git-ssh.sh</p>
+<p>#replace <!-- raw HTML omitted --> with ssh url of your repo
+git -c core.askpass=true ls-remote -h <!-- raw HTML omitted --> HEAD</p>
+<p>#replace <!-- raw HTML omitted --> with ssh url of git repo of your openshift app
+git -c core.askpass=true ls-remote -h <!-- raw HTML omitted -->
+{% endhighlight %}</p>
+<p>###8. Configure jenkins to add required environment variable
+Go to <code>Manage Jenkins &gt; Configure System</code></p>
+<ul>
+<li>In <code>Global properties</code> check <code>Environment variables</code></li>
+<li>Add the following: <code>name: GIT_SSH</code>, <code>value: ${OPENSHIFT_DATA_DIR}git-ssh.sh</code></li>
+<li>save</li>
+</ul>
+<p>###9. Thats it now open my-bldr and click Build Now.
+If I haven&rsquo;t missed anything then build should be successful.</p>
+<p>Next step would be to add the <a href="https://wiki.jenkins-ci.org/display/JENKINS/Github+Plugin">Github plugin</a> and follow their instructions to add a trigger so that a push to your git repo triggers a build.</p>
+
+    
+  </div>
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/posts/2014-12-29-django-on-openshift/">
+                        django on Openshift
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+            <div class="single-pagination-container-next">
+                <div class="single-pagination-text">
+                    <a href="/posts/2015-01-03-tying-out-android-app-runtime-no-chrome/">
+                        Tying out ARChon: the android app runtime for chrome
+                    </a>
+                </div>
+                <div class="single-pagination-text">→</div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+      </main>
+    </div>
+
+    <footer>
+      <p>Powered by
+    <a href="https://gohugo.io/">Hugo</a>
+    and
+    <a href="https://github.com/tomfran/typo">tomfran/typo</a>
+</p>
+
+
+    </footer>
+
+  </body>
+
+  <script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+
+</html>

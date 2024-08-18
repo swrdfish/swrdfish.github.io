@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jax-Ws on Swrdfish</title>
+    <link>http://localhost:1313/tags/jax-ws/</link>
+    <description>Recent content in Jax-Ws on Swrdfish</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 22 May 2015 11:26:59 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/jax-ws/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lexmark: Week 1</title>
+      <link>http://localhost:1313/tech/2015-05-22-lexmark-week-1/</link>
+      <pubDate>Fri, 22 May 2015 11:26:59 +0000</pubDate>
+      <guid>http://localhost:1313/tech/2015-05-22-lexmark-week-1/</guid>
+      <description>So, the summer vacation has started, finally! But no relaxing this time around. I&amp;rsquo;m doing an internship at a company called Lexmark. The first week here has been pretty interesting.. the people here are cool, friendly. The work environment is also awsome, there are no restrictions or visible structure in the organisation. Very different from what my perception was about an Information Technology company.&#xA;The good parts: KFC for lunch on the first day Free Coffee and Lunch There are Bean Bags in the office!</description>
+    </item>
+  </channel>
+</rss>

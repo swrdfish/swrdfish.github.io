@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tor on Swrdfish</title>
+    <link>http://localhost:1313/tags/tor/</link>
+    <description>Recent content in Tor on Swrdfish</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 08 Jan 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/tor/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ssh and git through tor</title>
+      <link>http://localhost:1313/tech/2015-01-08-ssh-and-git-through-tor/</link>
+      <pubDate>Thu, 08 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tech/2015-01-08-ssh-and-git-through-tor/</guid>
+      <description>As I mentioned before our college network has this squid proxy which makes us spend more time configuring our tools to bypass it than doing any actual work. My goal this time was to get ssh working behind the proxy.&#xA;Most git repositories provide ssh links. So to get git working I needed to get ssh working first. A simple nmap showed that there are 4 ports open on the proxy server one of them being the ssh port: 22.</description>
+    </item>
+    <item>
+      <title>IRC through tor</title>
+      <link>http://localhost:1313/tech/2015-01-04-irc-through-tor/</link>
+      <pubDate>Sun, 04 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tech/2015-01-04-irc-through-tor/</guid>
+      <description>In my college they use squid proxy with only a few open ports. This doesn&amp;rsquo;t allow us to use the irc clients. The solution is to use some application like XChat through Tor. But most irc servers block tor exit nodes. Freenode is also not an exception. But it does allow access through tor. To get connect to freenode through tor follow the instructions here and also here.&#xA;###Note: Don&amp;rsquo;t use the sasl script in python for XChat.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/openshift/index.xml" title="Swrdfish">
+<meta name="description" content="" />
+
+<title>
+    
+    Openshift | Swrdfish
+    
+</title>
+
+<link rel="canonical" href="http://localhost:1313/tags/openshift/" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.a6824bbee0d90d5af09fed9b70395ce7076b615e315037455d903314e96ef91b.css" media="all">
+
+
+
+
+
+  </head>
+
+  
+
+  
+  
+  
+
+  <body class="auto">
+
+    <div class="content">
+      <header>
+        
+
+<div class="header">
+
+    
+
+    <h1 class="header-title">Swrdfish</h1>
+
+    <div class="flex">
+        
+
+        
+        
+      
+        <p class="small ">
+            <a href="/" >
+                /home
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/tech" >
+                /tech
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/travel" >
+                /travel
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/about" >
+                /about
+            </a>
+        </p>
+        
+        
+    </div>
+
+    
+
+</div>
+
+      </header>
+
+      <main class="main">
+        
+
+<div class="list-container">
+
+    
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/tags/">Tags</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/tags/openshift/">Openshift</a>
+</div>
+
+
+    <h1>Openshift</h1>
+    
+
+    
+
+    
+    
+    
+    
+
+    
+
+    
+
+    
+    <div class="post-line">
+
+    
+    
+    
+    
+
+    <p class="line-date">5 Jan 2015 </p>
+
+    <div>
+        <p class="line-title">
+            <a href="/tech/2015-01-05-django-static-files-in-openshift/">
+                Django static files in Openshift
+            </a>
+        </p>
+
+        
+        <p class="line-summary"> To serve static files for django use whitenoise.
+This will require you to add an environment variable DJANGO_SETTINGS_MODULE=&quot;jhinuk.settings&quot; to your Openshift app. To do this follow the instructions here </p>
+        
+    </div>
+</div>
+    
+
+    
+
+    
+    <div class="post-line">
+
+    
+    
+    
+    
+
+    <p class="line-date">3 Jan 2015 </p>
+
+    <div>
+        <p class="line-title">
+            <a href="/tech/2015-01-03-using-jenkins-on-openshift/">
+                using jenkins on openshift
+            </a>
+        </p>
+
+        
+        <p class="line-summary"> So I have got my django app running on Openshift. ([how to run django app on Openshift]({% post_url 2014-12-29-django-on-openshift %})) Now I wanted to automate the deployment of the app from a Github repo. The tool people use to do this is called Jenkins. So here&rsquo;s the rundown of what I have been able to achieve.
+First of all I havent been able to automatically build the app for deployment. What I&rsquo;ve been able to do is setup a jenkins server, create a new job which receives an event from Github notifying a modification, after receiving which it simply pulls the changes from Github and pushes it to the Openshift server running the django app. </p>
+        
+    </div>
+</div>
+    
+
+    
+
+    
+    <div class="post-line">
+
+    
+    
+    
+    
+
+    <p class="line-date">29 Dec 2014 </p>
+
+    <div>
+        <p class="line-title">
+            <a href="/tech/2014-12-29-django-on-openshift/">
+                django on Openshift
+            </a>
+        </p>
+
+        
+        <p class="line-summary"> Openshift is a new app hosting service from RedHat which offers a great free package. Till now I&rsquo;ve used Heroku to host some apps and its great but it doesn&rsquo;t provide any free database (well it does but you&rsquo;ll have to enter your credit card details which in India few people have). Also the filesystem of heroku is such that it refreshes every 24hrs deleting every thing except the repo. So heroku is great for testing but hosting something with somesort of a database is not possible unless you pay. </p>
+        
+    </div>
+</div>
+    
+
+    
+
+    
+
+</div>
+
+      </main>
+    </div>
+
+    <footer>
+      <p>Powered by
+    <a href="https://gohugo.io/">Hugo</a>
+    and
+    <a href="https://github.com/tomfran/typo">tomfran/typo</a>
+</p>
+
+
+    </footer>
+
+  </body>
+
+  <script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+
+</html>

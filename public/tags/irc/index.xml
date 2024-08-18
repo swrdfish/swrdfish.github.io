@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IRC on Swrdfish</title>
+    <link>http://localhost:1313/tags/irc/</link>
+    <description>Recent content in IRC on Swrdfish</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 04 Jan 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/irc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IRC through tor</title>
+      <link>http://localhost:1313/tech/2015-01-04-irc-through-tor/</link>
+      <pubDate>Sun, 04 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tech/2015-01-04-irc-through-tor/</guid>
+      <description>In my college they use squid proxy with only a few open ports. This doesn&amp;rsquo;t allow us to use the irc clients. The solution is to use some application like XChat through Tor. But most irc servers block tor exit nodes. Freenode is also not an exception. But it does allow access through tor. To get connect to freenode through tor follow the instructions here and also here.&#xA;###Note: Don&amp;rsquo;t use the sasl script in python for XChat.</description>
+    </item>
+  </channel>
+</rss>
