@@ -1,0 +1,24 @@
+---
+layout: default
+title: Photography
+permalink: /photography/
+---
+<div id="instafeed"></div>
+<div class="post-separator"></div>
+
+<script type="text/javascript" src="/assets/js/instafeed.min.js"></script>
+
+{% assign instajstemplate = '<a href="{{link}}"><div class="instajsimg"><img src="{{image}}" />{{caption}}</div></a>' %}
+<script type="text/javascript">
+    var feed = new Instafeed({
+        get: 'user',
+        userId: '1998207839',
+        // clientId: '994548c62e38431dbd9e266f04d2ac0a'
+        accessToken: '1998207839.994548c.d64cd2a45cae4bfb8a5dab9a32ac8b02',
+        limit: 50,
+        resolution: 'standard_resolution',
+        template: '{{ instajstemplate}}'
+    });
+    feed.run();
+</script>
+      

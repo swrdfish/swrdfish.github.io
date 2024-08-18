@@ -1,0 +1,29 @@
+---
+layout: default
+title: Archive
+permalink: /archive/
+---
+
+<h1>Archive </h1>
+
+{% for post in site.posts %}
+    {% capture month %}{{ post.date | date: '%m%Y' }}{% endcapture %}
+    {% capture nmonth %}{{ post.next.date | date: '%m%Y' }}{% endcapture %}
+        {% if month != nmonth %}
+            {% if forloop.index != 1 %}</ul>{% endif %}
+            <h3 style="text-align: left">{{ post.date | date: '%B %Y' }}</h3><ul class="archive-list">
+        {% endif %}
+    <li>
+    	<div class="bullet">
+           <span style="font-size: 2em">∘</span>   
+        </div>
+        <div class="archive-title">
+           <a href="{{ post.url }}">{{ post.title }}</a> 
+        </div>
+        <div class="archive-date">
+    	   <time>{{ post.date | date: "%e %B %Y" }}</time> 
+        </div>   
+    </li>
+{% endfor %}
+
+<div class="post-separator"></div>

@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+<div class="home">
+    {% for post in site.work %}
+      <h2>
+        <a class="post-link" href="{{ post.url | prepend: site.url }}">{{ post.title }}</a>
+      </h2>
+	  <div style="margin: -10px 0 25px;">
+      	<span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+      </div>
+      {{ post.content }}
+      <div class="post-separator"></div>
+    {% endfor %}
+</div>

@@ -1,0 +1,33 @@
+# Site settings
+title: Toys in the Attic
+email: ghoshbinayak@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  Musings, Learnings, Experiences.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://swrdfish.github.io" # the base hostname & protocol for your site
+# url: "http://127.0.0.1:4000"
+github_username:  swrdfish
+twitter_username: binayak_ghosh
+facebook_username: ghoshbinayak
+
+# Build settings
+gems: [jekyll-paginate, octopress-minify-html]
+markdown: kramdown
+safe: false
+exclude: ['README.md']
+paginate: 10
+permalink: /:year/:month/:day/:title/
+plugins: [jekyll-paginate]
+paginate_path: /page:num
+
+# Collections
+collections: 
+  work:
+    output: true
+  hobby:
+    output: true
+  pages:
+    output: true
+
+# octopress minify html
+minify_html: false
