@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+<meta name="description" content="" />
+
+<title>
+    
+    django on Openshift | Swrdfish
+    
+</title>
+
+<link rel="canonical" href="https://swrdfish.github.io/tech/2014-12-29-django-on-openshift/" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.a6824bbee0d90d5af09fed9b70395ce7076b615e315037455d903314e96ef91b.css" media="all">
+
+
+
+
+  
+
+
+
+
+
+  </head>
+
+  
+
+  
+  
+  
+
+  <body class="auto">
+
+    <div class="content">
+      <header>
+        
+
+<div class="header">
+
+    
+
+    <h1 class="header-title">Swrdfish</h1>
+
+    <div class="flex">
+        
+
+        
+        
+      
+        <p class="small ">
+            <a href="/" >
+                /home
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/tech" >
+                /tech
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/travel" >
+                /travel
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/about" >
+                /about
+            </a>
+        </p>
+        
+        
+    </div>
+
+    
+
+</div>
+
+      </header>
+
+      <main class="main">
+        
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/tech/">Teches</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/tech/2014-12-29-django-on-openshift/">django on Openshift</a>
+</div>
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title">django on Openshift</h1>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2014-12-29T00:00:00&#43;00:00">December 29, 2014</time>
+      
+
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  <div class="single-content">
+    <p><a href="https://www.openshift.com/">Openshift</a> is a new app hosting service from RedHat which offers a great free package. Till now I&rsquo;ve used Heroku to host some apps and its great but it doesn&rsquo;t provide any free database (well it does but you&rsquo;ll have to enter your credit card details which in India few people have). Also the filesystem of heroku is such that it refreshes every 24hrs deleting every thing except the repo. So heroku is great for testing but hosting something with somesort of a database is not possible unless you pay.</p>
+<p>In comes <em><strong>Openshift</strong></em> to the rescue. It provides a 1GB filesystem which doesnot refresh and a free database which is quiet generous. So right now I&rsquo;m trying to host a django app on Openshift and I&rsquo;ll document the steps that I take here.</p>
+<p>#Steps:</p>
+<h3 id="1create-a-python-app-using-the-web-interface">1.Create a python app using the web interface.</h3>
+<p>Or using the command line:
+{% highlight bash %}
+rhc app-create mypythonapp python-2.7
+{% endhighlight %}</p>
+<h3 id="2clone-the-source-code">2.Clone the source code.</h3>
+<p>Can get git url form your apps <a href="https://openshift.redhat.com/app/console/applications">web console</a>.
+{% highlight bash %}
+git clone <!-- raw HTML omitted -->
+{% endhighlight %}</p>
+<h3 id="3locally-create-a-django-app">3.Locally create a django app.</h3>
+<p>Now you can modify the source, but its better to start from scratch. So ceate a new django app:
+{% highlight bash %}
+django-admin startproject mydjangoapp
+{% endhighlight %}</p>
+<h3 id="4install-gunicorn-and-set-it-up">4.Install gunicorn and set it up:</h3>
+<p>Follow the instructions on the <a href="http://gunicorn.org/">gunicorn website</a> to setup gunicorn:
+{% highlight bash %}
+pip install gunicorn
+{% endhighlight %}</p>
+<h3 id="5copy-reqired-files-from-cloned-source">5.Copy reqired files from cloned source.</h3>
+<p>Copy the following from the cloned source of your Openshift app to the root of the django app: <code>.openshift</code>, <code>setup.py</code>, <code>requirements.txt</code></p>
+<h3 id="6generate-the-requirements-file">6.Generate the requirements file.###</h3>
+<p>{% highlight bash %}
+pip freeze &gt; requirements.txt
+{% endhighlight %}</p>
+<h3 id="7ceate-the-apppy-file">7.Ceate the app.py file</h3>
+<p>OpenShift runs this app.py file as the entry point into the app. We are using gunicorn so we need to start gunicorn server from here. To do this follow the instructions in the following links:</p>
+<ul>
+<li><a href="https://developers.openshift.com/en/python-getting-started.html#step4">Getting Started with Python 2.6, 2.7, and 3.3)</a></li>
+<li><a href="http://gunicorn-docs.readthedocs.org/en/latest/custom.html">Gunicorn Custom Application</a></li>
+</ul>
+<p>The final app.py file will look something like this
+{% highlight python %}
+#!/usr/bin/python
+from <strong>future</strong> import unicode_literals
+import os
+import sys
+import multiprocessing
+import gunicorn.app.base
+from mydjangoapp import wsgi
+from gunicorn.six import iteritems</p>
+<h1 id="hack-to-make-sure-we-can-load-wsgipy-as-a-module-in-this-class">hack to make sure we can load wsgi.py as a module in this class</h1>
+<p>sys.path.insert(0, os.path.dirname(<strong>file</strong>))</p>
+<p>virtenv = os.environ[&lsquo;OPENSHIFT_PYTHON_DIR&rsquo;] + &lsquo;/virtenv/&rsquo;
+virtualenv = os.path.join(virtenv, &lsquo;bin/activate_this.py&rsquo;)
+try:
+execfile(virtualenv, dict(<strong>file</strong>=virtualenv))
+except IOError:
+pass</p>
+<h1 id="get-the-environment-information-we-need-to-start-the-server">Get the environment information we need to start the server</h1>
+<p>ip = os.environ[&lsquo;OPENSHIFT_PYTHON_IP&rsquo;]
+port = int(os.environ[&lsquo;OPENSHIFT_PYTHON_PORT&rsquo;])
+host_name = os.environ[&lsquo;OPENSHIFT_GEAR_DNS&rsquo;]</p>
+<p>def number_of_workers():
+return (multiprocessing.cpu_count() * 2) + 1</p>
+<p>class StandaloneApplication(gunicorn.app.base.BaseApplication):</p>
+<pre><code>def __init__(self, app, options=None):
+    self.options = options or {}
+    self.application = app
+    super(StandaloneApplication, self).__init__()
+
+def load_config(self):
+    config = dict([(key, value) for key, value in iteritems(self.options)
+                   if key in self.cfg.settings and value is not None])
+    for key, value in iteritems(config):
+        self.cfg.set(key.lower(), value)
+
+def load(self):
+    return self.application
+</code></pre>
+<p>if <strong>name</strong> == &lsquo;<strong>main</strong>&rsquo;:
+options = {
+&lsquo;bind&rsquo;: &lsquo;%s:%s&rsquo; % (ip, port),
+&lsquo;workers&rsquo;: number_of_workers(),
+}
+StandaloneApplication(wsgi.application, options).run()</p>
+<p>{% endhighlight %}</p>
+<h3 id="8commit-all-the-changes-and-push-to-openshift">8.Commit all the changes and push to Openshift</h3>
+<p>Commit all files in <code>mydjangoapp</code> to a git repo.
+{% highlight bash %}
+git init</p>
+<p>git add *</p>
+<p>git commit -m&rsquo;initial commit&rsquo;
+{% endhighlight %}</p>
+<p>Then push this repo to Openshift
+{% highlight bash %}
+git remote add openshift <!-- raw HTML omitted --></p>
+<p>git push openshift
+{% endhighlight %}</p>
+<h3 id="9adding-environment-variables-if-necessary">9.Adding environment variables if necessary</h3>
+<p>Follow the instructions <a href="https://help.openshift.com/hc/en-us/articles/202399310-How-to-create-and-use-environment-variables-on-the-server-">here</a>{: target blank}</p>
+<p>And that should do the job.</p>
+
+    
+  </div>
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/tech/2014-12-22-building-the-blog-using-jekyll/">
+                        Another attempt at blogging.
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+            <div class="single-pagination-container-next">
+                <div class="single-pagination-text">
+                    <a href="/tech/2015-01-03-using-jenkins-on-openshift/">
+                        using jenkins on openshift
+                    </a>
+                </div>
+                <div class="single-pagination-text">→</div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+      </main>
+    </div>
+
+    <footer>
+      <p>Powered by
+    <a href="https://gohugo.io/">Hugo</a>
+    and
+    <a href="https://github.com/tomfran/typo">tomfran/typo</a>
+</p>
+
+
+    </footer>
+
+  </body>
+
+  <script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+
+</html>

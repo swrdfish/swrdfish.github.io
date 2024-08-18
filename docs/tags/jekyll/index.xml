@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jekyll on Swrdfish</title>
+    <link>https://swrdfish.github.io/tags/jekyll/</link>
+    <description>Recent content in Jekyll on Swrdfish</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 22 Dec 2014 16:34:34 +0000</lastBuildDate>
+    <atom:link href="https://swrdfish.github.io/tags/jekyll/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Another attempt at blogging.</title>
+      <link>https://swrdfish.github.io/tech/2014-12-22-building-the-blog-using-jekyll/</link>
+      <pubDate>Mon, 22 Dec 2014 16:34:34 +0000</pubDate>
+      <guid>https://swrdfish.github.io/tech/2014-12-22-building-the-blog-using-jekyll/</guid>
+      <description>So, I&amp;rsquo;m going to give a final shot at blogging. I&amp;rsquo;ve used Wordpress, Blogger, Tumblr previousl but have never been able to be stick to it. Being a regular blogger has been on my todo list for like forever. But till now I&amp;rsquo;ve only written a post or two in each platform.&#xA;Well here&amp;rsquo;s a new blogging platform and a final attempt. Jekyll seems a good option for me as it minimises the friction of blogging a lot.</description>
+    </item>
+  </channel>
+</rss>
