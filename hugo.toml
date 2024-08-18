@@ -2,6 +2,8 @@ baseURL = 'https://swrdfish.github.io/'
 languageCode = 'en-us'
 title = 'Swrdfish'
 publishDir = 'docs'
+pluralizeListTitles = false
+
 
 [taxonomies]
 tag = 'tags'
@@ -40,15 +42,11 @@ breadcrumbs = true
 # Social icons
 [[params.social]]
 name = "linkedin"
-url = "https://www.linkedin.com/in/user/"
-
-[[params.social]]
-name = "medium"
-url = "https://medium.com/@user"
+url = "https://www.linkedin.com/in/ghoshbinayak/"
 
 [[params.social]]
 name = "github"
-url = "https://github.com/user"
+url = "https://github.com/swrdfish"
 
 # Main menu pages
 [[params.menu]]
@@ -62,10 +60,6 @@ url = "/tech"
 [[params.menu]]
 name = "travel"
 url = "/travel"
-
-[[params.menu]]
-name = "about"
-url = "/about"
 
 
 # Syntax highligth on code blocks
