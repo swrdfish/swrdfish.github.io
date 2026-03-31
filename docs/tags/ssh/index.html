@@ -33,9 +33,6 @@
 
 
 
-  
-
-
 
 
 
@@ -82,6 +79,13 @@
         <p class="small ">
             <a href="/travel" >
                 /travel
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/bookmarks" >
+                /bookmarks
             </a>
         </p>
         
@@ -144,8 +148,8 @@
         </p>
 
         
-        <p class="line-summary"> As I mentioned before our college network has this squid proxy which makes us spend more time configuring our tools to bypass it than doing any actual work. My goal this time was to get ssh working behind the proxy.
-Most git repositories provide ssh links. So to get git working I needed to get ssh working first. A simple nmap showed that there are 4 ports open on the proxy server one of them being the ssh port: 22. </p>
+        <p class="line-summary"> <p>As I mentioned before our college network has this squid proxy which makes us spend more time configuring our tools to bypass it than doing any actual work. My goal this time was to get ssh working behind the proxy.</p>
+<p>Most git repositories provide ssh links. So to get git working I needed to get ssh working first. A simple <code>nmap</code> showed that there are 4 ports open on the proxy server one of them being the ssh port: 22. So I guessed I only needed to tunnel the ssh request using http connect. But turns they have tunneling blocked for port 22.</p> </p>
         
     </div>
 </div>

@@ -3,7 +3,7 @@ layout: post
 title: "Lexmark: Week 2"
 categories: []
 tags: []
-published: True
+jekyll_published: True
 date: 2015-06-01 15:36:09
 
 ---

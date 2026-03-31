@@ -3,7 +3,7 @@ layout: post
 title: Powershell on steroids!
 categories: []
 tags: []
-published: True
+jekyll_published: True
 date: 2015-06-05 14:42:00
 ---
 

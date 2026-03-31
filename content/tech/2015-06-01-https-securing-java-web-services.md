@@ -3,7 +3,7 @@ layout: post
 title: "HTTPS: Securing java web services"
 categories: []
 tags: []
-published: True
+jekyll_published: True
 date: 2015-06-02 15:25:34
 ---
 

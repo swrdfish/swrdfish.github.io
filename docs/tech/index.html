@@ -2,11 +2,11 @@
 <html lang="en-us"
   dir="ltr">
 
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 
-<link rel="alternate" type="application/rss+xml" href="https://swrdfish.github.io/tech/index.xml" title="Swrdfish">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tech/index.xml" title="Swrdfish">
 <meta name="description" content="" />
 
 <title>
@@ -15,7 +15,7 @@
     
 </title>
 
-<link rel="canonical" href="https://swrdfish.github.io/tech/" />
+<link rel="canonical" href="http://localhost:1313/tech/" />
 
 
 
@@ -29,11 +29,6 @@
 
 
 <link rel="stylesheet" href="/assets/combined.min.a6824bbee0d90d5af09fed9b70395ce7076b615e315037455d903314e96ef91b.css" media="all">
-
-
-
-
-  
 
 
 
@@ -82,6 +77,13 @@
         <p class="small ">
             <a href="/travel" >
                 /travel
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/bookmarks" >
+                /bookmarks
             </a>
         </p>
         
@@ -141,8 +143,9 @@
         </p>
 
         
-        <p class="line-summary"> I&rsquo;m a linux/unix guy, I&rsquo;ve always had heated debates with my &ldquo;Windows&rdquo; friends about how good the unix environment is and how the terminal can do magical things.. But today I was hit on the face, real hard. This guide show us the steps to make powershell as good as if not even better than bash is some ways.
-Thanks @Ananyo for the link. &lsquo;Ar kono dabi nei, windows bhalo&rsquo; </p>
+        <p class="line-summary"> <p>I&rsquo;m a linux/unix guy, I&rsquo;ve always had heated debates with my &ldquo;Windows&rdquo; friends about how good the unix environment is and how the terminal can do magical things..
+But today I was hit on the face, real hard. This <a href="https://software.intel.com/en-us/blogs/2014/06/17/giving-powershell-a-persistent-history-of-commands">guide</a> show us the steps to make powershell as good as if not even better than bash is some ways.</p>
+<p>Thanks <a href="http://github.com/backlogaddict">@Ananyo</a> for the link. &lsquo;Ar kono dabi nei, windows bhalo&rsquo;</p> </p>
         
     </div>
 </div>
@@ -168,8 +171,9 @@ Thanks @Ananyo for the link. &lsquo;Ar kono dabi nei, windows bhalo&rsquo; </p>
         </p>
 
         
-        <p class="line-summary"> As part of my internship project I had to learn about HTTPS, how it works and how to use HTTPS to secure SOAP based web services written in java.
-Why do we need HTTPS? The document transfer protocol of choice for the internet, HTTP uses a plain text format for transfering data. Hence anyone who is able to intercept the communication channel(MITM attack) can view everything that is being transmitted by the sender and receiver. </p>
+        <p class="line-summary"> <p>As part of my internship project I had to learn about HTTPS, how it works and how to use HTTPS to secure SOAP based web services written in java.</p>
+<h3 id="why-do-we-need-https">Why do we need HTTPS?</h3>
+<p>The document transfer protocol of choice for the internet, <a href="http://www.w3.org/Protocols/">HTTP</a> uses a plain text format for transfering data. Hence anyone who is able to intercept the communication channel(<a href="http://en.wikipedia.org/wiki/Man-in-the-middle_attack">MITM attack</a>) can view everything that is being transmitted by the sender and receiver. This is specially a problem for wireless networks where any one with a pretty basic wireless network adapter can tap into and listen to the communications channel.</p> </p>
         
     </div>
 </div>
@@ -195,8 +199,18 @@ Why do we need HTTPS? The document transfer protocol of choice for the internet,
         </p>
 
         
-        <p class="line-summary"> So one more week just flew past! Progress: not much.. I spent the whole week studying..
-Progress: Week 2 Got a pretty good understanding of SOAP and WSDL Got and overview of the tls/ssl protocol and how the whole certification system works.. but the protocol is huge and would need some more time and fiddling to wrap my head around it. Wrote a very basic soap service, secured it with https. </p>
+        <p class="line-summary"> <p>So one more week just flew past! Progress: not much.. I spent the whole week studying..</p>
+<h3 id="progress-week-2">Progress: Week 2</h3>
+<ul>
+<li>Got a pretty good understanding of <a href="http://www.w3.org/TR/soap">SOAP</a> and <a href="http://www.w3.org/TR/wsdl20">WSDL</a></li>
+<li>Got and overview of the tls/ssl protocol and how the whole certification system works.. but the protocol is huge and would need some more time and fiddling to wrap my head around it.</li>
+<li>Wrote a very basic soap service, secured it with https.</li>
+<li>Was able to run my service from within the <a href="https://www.eclipse.org/jetty/">Jetty</a> and secure it using https as well.</li>
+<li>Hence I&rsquo;ve got an overview of how Java servlets and servlet containers function.</li>
+<li>Was able to verify the services security using <a href="">wireshark</a> to look into the packets and verify that they are encrypted.</li>
+</ul>
+<h3 id="todo">Todo:</h3>
+<p>I&rsquo;m going to write another blog post explaining what I&rsquo;ve learnt so far mentioning the source documents so that others in the team can get a better understanding of https.</p> </p>
         
     </div>
 </div>
@@ -222,8 +236,38 @@ Progress: Week 2 Got a pretty good understanding of SOAP and WSDL Got and overvi
         </p>
 
         
-        <p class="line-summary"> So, the summer vacation has started, finally! But no relaxing this time around. I&rsquo;m doing an internship at a company called Lexmark. The first week here has been pretty interesting.. the people here are cool, friendly. The work environment is also awsome, there are no restrictions or visible structure in the organisation. Very different from what my perception was about an Information Technology company.
-The good parts: KFC for lunch on the first day Free Coffee and Lunch There are Bean Bags in the office! </p>
+        <p class="line-summary"> <p>So, the summer vacation has started, finally! But no relaxing this time around. I&rsquo;m doing an internship at a company called <a href="http://www.lexmark.com/en_in.html">Lexmark</a>. The first week here has been pretty interesting.. the people here are cool, friendly. The work environment is also awsome, there are no restrictions or visible structure in the organisation. Very different from what my perception was about an Information Technology company.</p>
+<h3 id="the-good-parts">The good parts:</h3>
+<ul>
+<li>KFC for lunch on the first day</li>
+<li>Free Coffee and Lunch</li>
+<li>There are Bean Bags in the office! ( in a office in kolkata! )</li>
+<li>Games room and Gym :D</li>
+<li>No pressure from managers</li>
+<li>People are really friendly here.</li>
+</ul>
+<h3 id="the-not-so-good-bits">The not so good bits:</h3>
+<ul>
+<li>The commute is hectic. It takes about 2hrs to reach the office!</li>
+<li>Else, not much really.. will have to wait and see.</li>
+</ul>
+<h3 id="the-work">The work:</h3>
+<ul>
+<li>Work with the warriors team ( yep they have team names like that ).</li>
+<li>Learn the frameworks being used: Java/Jax-ws (basically working with web services based on the SOAP model)</li>
+<li>Learn as much as possible about ssl/https so the web services can be secured.</li>
+</ul>
+<h3 id="progress-week-1">Progress: Week 1</h3>
+<ul>
+<li>Implemented some basic rest based web srvice using the <a href="http://sparkjava.com/">Spark</a> library to get a hang of how things work in java (my java knowledge is very limited, I&rsquo;ve only worked with the android sdk, haven&rsquo;t written anything else)</li>
+<li>Next moved on to Jax-ws framework, got a basic service running.</li>
+<li>Started learning basics of <a href="http://www.w3.org/TR/soap/">SOAP</a> model and <a href="http://www.w3.org/TR/wsdl20/">WSDL</a>.</li>
+<li>Used raw http POST requests to get a better understanding of how the whole SOAP thing works.</li>
+<li>Got to know about a tool called soapui to test the web service, used it and got a more or less clear view of how the SOAP model works.</li>
+<li>Today I&rsquo;ll look at https and how it can be integrated with the Jax-ws framework.</li>
+<li>learnt how to user <code>wsimport</code> to generate java classes from a third party web service.</li>
+<li>Note: I&rsquo;m reading this book <a href="http://www.oreilly.de/catalog/9781449365110/">Java Web Services: Up and Running</a> which is so far seems really good. so if any one wants to learn Jax-ws this will be a good start.</li>
+</ul> </p>
         
     </div>
 </div>
@@ -249,8 +293,8 @@ The good parts: KFC for lunch on the first day Free Coffee and Lunch There are B
         </p>
 
         
-        <p class="line-summary"> As I mentioned before our college network has this squid proxy which makes us spend more time configuring our tools to bypass it than doing any actual work. My goal this time was to get ssh working behind the proxy.
-Most git repositories provide ssh links. So to get git working I needed to get ssh working first. A simple nmap showed that there are 4 ports open on the proxy server one of them being the ssh port: 22. </p>
+        <p class="line-summary"> <p>As I mentioned before our college network has this squid proxy which makes us spend more time configuring our tools to bypass it than doing any actual work. My goal this time was to get ssh working behind the proxy.</p>
+<p>Most git repositories provide ssh links. So to get git working I needed to get ssh working first. A simple <code>nmap</code> showed that there are 4 ports open on the proxy server one of them being the ssh port: 22. So I guessed I only needed to tunnel the ssh request using http connect. But turns they have tunneling blocked for port 22.</p> </p>
         
     </div>
 </div>
@@ -276,8 +320,8 @@ Most git repositories provide ssh links. So to get git working I needed to get s
         </p>
 
         
-        <p class="line-summary"> To serve static files for django use whitenoise.
-This will require you to add an environment variable DJANGO_SETTINGS_MODULE=&quot;jhinuk.settings&quot; to your Openshift app. To do this follow the instructions here </p>
+        <p class="line-summary"> <p>To serve static files for django use <a href="https://warehouse.python.org/project/whitenoise/">whitenoise</a>.</p>
+<p>This will require you to add an environment variable <code>DJANGO_SETTINGS_MODULE=&quot;jhinuk.settings&quot;</code> to your Openshift app. To do this follow the instructions <a href="https://help.openshift.com/hc/en-us/articles/202399310-How-to-create-and-use-environment-variables-on-the-server-">here</a></p> </p>
         
     </div>
 </div>
@@ -303,8 +347,8 @@ This will require you to add an environment variable DJANGO_SETTINGS_MODULE=&quo
         </p>
 
         
-        <p class="line-summary"> In my college they use squid proxy with only a few open ports. This doesn&rsquo;t allow us to use the irc clients. The solution is to use some application like XChat through Tor. But most irc servers block tor exit nodes. Freenode is also not an exception. But it does allow access through tor. To get connect to freenode through tor follow the instructions here and also here.
-###Note: Don&rsquo;t use the sasl script in python for XChat. </p>
+        <p class="line-summary"> <p>In my college they use squid proxy with only a few open ports. This doesn&rsquo;t allow us to use the irc clients. The solution is to use some application like <a href="http://xchat.org/">XChat</a> through <a href="https://www.torproject.org/">Tor</a>. But most irc servers block tor exit nodes. Freenode is also not an exception. But it does allow access through tor. To get connect to freenode through tor follow the instructions <a href="https://www.freenode.net/irc_servers.shtml#tor">here</a> and also <a href="https://cortman.wordpress.com/2013/03/12/how-to-set-up-xchat-with-tor-sasl/">here</a>.</p>
+<p>###Note: Don&rsquo;t use the sasl script in python for XChat. Use the perl script.</p> </p>
         
     </div>
 </div>
@@ -330,8 +374,12 @@ This will require you to add an environment variable DJANGO_SETTINGS_MODULE=&quo
         </p>
 
         
-        <p class="line-summary"> Ok, following the instructions on Lifehacher{:target=&quot;_blank&quot;} I&rsquo;ve managed to install android app runtime called ARChon{:target=&quot;_blank&quot;} on chrome. And the thing works great! :D
-Here are some screen shots: </p>
+        <p class="line-summary"> <p>Ok, following the instructions on <a href="http://lifehacker.com/how-to-run-android-apps-inside-chrome-on-any-desktop-op-1637564101">Lifehacher</a>{:target=&quot;_blank&quot;} I&rsquo;ve managed to install android app runtime called <a href="https://github.com/vladikoff/chromeos-apk/blob/master/archon.md">ARChon</a>{:target=&quot;_blank&quot;} on chrome. And the thing works great! :D</p>
+<p>Here are some screen shots:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted --> </p>
         
     </div>
 </div>
@@ -357,8 +405,9 @@ Here are some screen shots: </p>
         </p>
 
         
-        <p class="line-summary"> So I have got my django app running on Openshift. ([how to run django app on Openshift]({% post_url 2014-12-29-django-on-openshift %})) Now I wanted to automate the deployment of the app from a Github repo. The tool people use to do this is called Jenkins. So here&rsquo;s the rundown of what I have been able to achieve.
-First of all I havent been able to automatically build the app for deployment. What I&rsquo;ve been able to do is setup a jenkins server, create a new job which receives an event from Github notifying a modification, after receiving which it simply pulls the changes from Github and pushes it to the Openshift server running the django app. </p>
+        <p class="line-summary"> <p>So I have got my django app running on Openshift. ([how to run django app on Openshift]({% post_url 2014-12-29-django-on-openshift %}))
+Now I wanted to automate the deployment of the app from a Github repo. The tool people use to do this is called Jenkins. So here&rsquo;s the rundown of what I have been able to achieve.</p>
+<p>First of all I havent been able to automatically build the app for deployment. What I&rsquo;ve been able to do is setup a jenkins server, create a new job which receives an event from Github notifying a modification, after receiving which it simply pulls the changes from Github and pushes it to the Openshift server running the django app. On receiving the push the django app is rebuilt and deployed. Therefore I don&rsquo;t have to push the app to both Github and django. But it would be better to have continous integration as the Openshift server stops the django app during rebuild so it becomes unreachable. So next step would be to implement CI.</p> </p>
         
     </div>
 </div>
@@ -384,7 +433,7 @@ First of all I havent been able to automatically build the app for deployment. W
         </p>
 
         
-        <p class="line-summary"> Openshift is a new app hosting service from RedHat which offers a great free package. Till now I&rsquo;ve used Heroku to host some apps and its great but it doesn&rsquo;t provide any free database (well it does but you&rsquo;ll have to enter your credit card details which in India few people have). Also the filesystem of heroku is such that it refreshes every 24hrs deleting every thing except the repo. So heroku is great for testing but hosting something with somesort of a database is not possible unless you pay. </p>
+        <p class="line-summary"> <p><a href="https://www.openshift.com/">Openshift</a> is a new app hosting service from RedHat which offers a great free package. Till now I&rsquo;ve used Heroku to host some apps and its great but it doesn&rsquo;t provide any free database (well it does but you&rsquo;ll have to enter your credit card details which in India few people have). Also the filesystem of heroku is such that it refreshes every 24hrs deleting every thing except the repo. So heroku is great for testing but hosting something with somesort of a database is not possible unless you pay.</p> </p>
         
     </div>
 </div>
@@ -410,8 +459,9 @@ First of all I havent been able to automatically build the app for deployment. W
         </p>
 
         
-        <p class="line-summary"> So, I&rsquo;m going to give a final shot at blogging. I&rsquo;ve used Wordpress, Blogger, Tumblr previousl but have never been able to be stick to it. Being a regular blogger has been on my todo list for like forever. But till now I&rsquo;ve only written a post or two in each platform.
-Well here&rsquo;s a new blogging platform and a final attempt. Jekyll seems a good option for me as it minimises the friction of blogging a lot. </p>
+        <p class="line-summary"> <p>So, I&rsquo;m going to give a final shot at blogging.
+I&rsquo;ve used Wordpress, Blogger, Tumblr previousl but have never been able to be stick to it. Being a regular blogger has been on my todo list for like forever. But till now I&rsquo;ve only written a post or two in each platform.</p>
+<p>Well here&rsquo;s a new blogging platform and a final attempt. Jekyll seems a good option for me as it minimises the friction of blogging a lot. I can write and publish a post from sublime. I mean what can be better right.</p> </p>
         
     </div>
 </div>

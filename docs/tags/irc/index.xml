@@ -13,7 +13,7 @@
       <link>https://swrdfish.github.io/tech/2015-01-04-irc-through-tor/</link>
       <pubDate>Sun, 04 Jan 2015 00:00:00 +0000</pubDate>
       <guid>https://swrdfish.github.io/tech/2015-01-04-irc-through-tor/</guid>
-      <description>In my college they use squid proxy with only a few open ports. This doesn&amp;rsquo;t allow us to use the irc clients. The solution is to use some application like XChat through Tor. But most irc servers block tor exit nodes. Freenode is also not an exception. But it does allow access through tor. To get connect to freenode through tor follow the instructions here and also here.&#xA;###Note: Don&amp;rsquo;t use the sasl script in python for XChat.</description>
+      <description>&lt;p&gt;In my college they use squid proxy with only a few open ports. This doesn&amp;rsquo;t allow us to use the irc clients. The solution is to use some application like &lt;a href=&#34;http://xchat.org/&#34;&gt;XChat&lt;/a&gt; through &lt;a href=&#34;https://www.torproject.org/&#34;&gt;Tor&lt;/a&gt;. But most irc servers block tor exit nodes. Freenode is also not an exception. But it does allow access through tor. To get connect to freenode through tor follow the instructions &lt;a href=&#34;https://www.freenode.net/irc_servers.shtml#tor&#34;&gt;here&lt;/a&gt; and also &lt;a href=&#34;https://cortman.wordpress.com/2013/03/12/how-to-set-up-xchat-with-tor-sasl/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;###Note: Don&amp;rsquo;t use the sasl script in python for XChat. Use the perl script.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

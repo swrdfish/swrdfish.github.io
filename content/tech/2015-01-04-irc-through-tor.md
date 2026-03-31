@@ -3,7 +3,7 @@ layout: post
 title: IRC through tor
 categories: [proxy, fucking-iiest]
 tags: [Tor, IRC, Proxy]
-published: True
+jekyll_published: True
 date: 2015-01-04
 ---
 

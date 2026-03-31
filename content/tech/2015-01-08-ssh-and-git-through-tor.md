@@ -3,7 +3,7 @@ layout: post
 title: ssh and git through tor
 categories: [proxy bypass]
 tags: [tor, proxy, git, ssh]
-published: True
+jekyll_published: True
 date: 2015-01-08
 ---
 

@@ -1,0 +1,25 @@
+{{ define "main" }}
+
+<div class="list-container">
+
+    {{ partial "breadcrumbs.html" . }}
+
+    <h1>{{ .Title }}</h1>
+    <p>This is a list of sites or topics that I find interesting.</p>
+    {{ .Content }}
+
+    {{ $paginationSize := 1}}
+    {{ if (gt .Site.Params.paginationSize 0) }}
+    {{ $paginationSize = .Site.Params.paginationSize }}
+    {{ end }}
+
+    {{ $paginator := .Paginate (.Pages.ByDate.Reverse) $paginationSize }}
+
+    {{ range $paginator.Pages }}
+    {{ partial "bookmark-entry.html" . }}
+    {{ end }}
+
+    {{ partial "pagination-controls.html" $paginator}}
+
+</div>
+{{ end }}

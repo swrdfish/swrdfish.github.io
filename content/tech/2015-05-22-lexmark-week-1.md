@@ -5,7 +5,7 @@ title: "Lexmark: Week 1"
 date: 2015-05-22 11:26:59
 categories: [lexmark]
 tags: [java, jax-ws]
-published: True
+jekyll_published: True
 
 ---
 

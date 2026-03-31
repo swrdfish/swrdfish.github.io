@@ -3,7 +3,7 @@ layout: post
 title: django on Openshift
 categories: [web-development, ]
 tags: [django, openshift]
-published: True
+jekyll_published: True
 date: 2014-12-29
 ---
 

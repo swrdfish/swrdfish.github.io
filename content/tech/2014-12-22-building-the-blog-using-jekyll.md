@@ -3,7 +3,7 @@ title = 'Another attempt at blogging.'
 date = 2014-12-22 16:34:34
 categories = ['blog', 'web']
 tags = ['Jekyll', 'Github']
-published = true
+jekyll_published = true
 +++
 
 So, I'm going to give a final shot at blogging. 

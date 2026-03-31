@@ -33,9 +33,6 @@
 
 
 
-  
-
-
 
 
 
@@ -82,6 +79,13 @@
         <p class="small ">
             <a href="/travel" >
                 /travel
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/bookmarks" >
+                /bookmarks
             </a>
         </p>
         
@@ -144,8 +148,8 @@
         </p>
 
         
-        <p class="line-summary"> As I mentioned before our college network has this squid proxy which makes us spend more time configuring our tools to bypass it than doing any actual work. My goal this time was to get ssh working behind the proxy.
-Most git repositories provide ssh links. So to get git working I needed to get ssh working first. A simple nmap showed that there are 4 ports open on the proxy server one of them being the ssh port: 22. </p>
+        <p class="line-summary"> <p>As I mentioned before our college network has this squid proxy which makes us spend more time configuring our tools to bypass it than doing any actual work. My goal this time was to get ssh working behind the proxy.</p>
+<p>Most git repositories provide ssh links. So to get git working I needed to get ssh working first. A simple <code>nmap</code> showed that there are 4 ports open on the proxy server one of them being the ssh port: 22. So I guessed I only needed to tunnel the ssh request using http connect. But turns they have tunneling blocked for port 22.</p> </p>
         
     </div>
 </div>
@@ -171,8 +175,8 @@ Most git repositories provide ssh links. So to get git working I needed to get s
         </p>
 
         
-        <p class="line-summary"> In my college they use squid proxy with only a few open ports. This doesn&rsquo;t allow us to use the irc clients. The solution is to use some application like XChat through Tor. But most irc servers block tor exit nodes. Freenode is also not an exception. But it does allow access through tor. To get connect to freenode through tor follow the instructions here and also here.
-###Note: Don&rsquo;t use the sasl script in python for XChat. </p>
+        <p class="line-summary"> <p>In my college they use squid proxy with only a few open ports. This doesn&rsquo;t allow us to use the irc clients. The solution is to use some application like <a href="http://xchat.org/">XChat</a> through <a href="https://www.torproject.org/">Tor</a>. But most irc servers block tor exit nodes. Freenode is also not an exception. But it does allow access through tor. To get connect to freenode through tor follow the instructions <a href="https://www.freenode.net/irc_servers.shtml#tor">here</a> and also <a href="https://cortman.wordpress.com/2013/03/12/how-to-set-up-xchat-with-tor-sasl/">here</a>.</p>
+<p>###Note: Don&rsquo;t use the sasl script in python for XChat. Use the perl script.</p> </p>
         
     </div>
 </div>

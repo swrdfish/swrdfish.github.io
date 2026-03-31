@@ -33,9 +33,6 @@
 
 
 
-  
-
-
 
 
 
@@ -82,6 +79,13 @@
         <p class="small ">
             <a href="/travel" >
                 /travel
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/bookmarks" >
+                /bookmarks
             </a>
         </p>
         
@@ -144,8 +148,9 @@
         </p>
 
         
-        <p class="line-summary"> So I have got my django app running on Openshift. ([how to run django app on Openshift]({% post_url 2014-12-29-django-on-openshift %})) Now I wanted to automate the deployment of the app from a Github repo. The tool people use to do this is called Jenkins. So here&rsquo;s the rundown of what I have been able to achieve.
-First of all I havent been able to automatically build the app for deployment. What I&rsquo;ve been able to do is setup a jenkins server, create a new job which receives an event from Github notifying a modification, after receiving which it simply pulls the changes from Github and pushes it to the Openshift server running the django app. </p>
+        <p class="line-summary"> <p>So I have got my django app running on Openshift. ([how to run django app on Openshift]({% post_url 2014-12-29-django-on-openshift %}))
+Now I wanted to automate the deployment of the app from a Github repo. The tool people use to do this is called Jenkins. So here&rsquo;s the rundown of what I have been able to achieve.</p>
+<p>First of all I havent been able to automatically build the app for deployment. What I&rsquo;ve been able to do is setup a jenkins server, create a new job which receives an event from Github notifying a modification, after receiving which it simply pulls the changes from Github and pushes it to the Openshift server running the django app. On receiving the push the django app is rebuilt and deployed. Therefore I don&rsquo;t have to push the app to both Github and django. But it would be better to have continous integration as the Openshift server stops the django app during rebuild so it becomes unreachable. So next step would be to implement CI.</p> </p>
         
     </div>
 </div>

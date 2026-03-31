@@ -1,0 +1,23 @@
+<div class="post-line">
+
+    {{ $dateFormat := "2 Jan 2006"}}
+    {{ with .Site.Params.listDateFormat }}
+    {{ $dateFormat = .}}
+    {{ end }}
+
+    <p class="line-date">{{ .Date.Format $dateFormat }}</p>
+
+    <div>
+        <p class="line-title">
+            {{ with .Params.link }}
+            <a href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ $.Title }}</a>
+            {{ else }}
+            {{ .Title }}
+            {{ end }}
+        </p>
+
+        {{ with .Params.description }}
+        <p class="line-summary">{{ . }}</p>
+        {{ end }}
+    </div>
+</div>

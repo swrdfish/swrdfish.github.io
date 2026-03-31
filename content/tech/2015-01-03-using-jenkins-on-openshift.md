@@ -3,7 +3,7 @@ layout: post
 title: using jenkins on openshift
 categories: [web-development, openshift]
 tags: [openshift, jenkins, automation]
-published: True
+jekyll_published: True
 date: 2015-01-03
 ---
 

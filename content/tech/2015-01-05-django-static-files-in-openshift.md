@@ -3,7 +3,7 @@ layout: post
 title: Django static files in Openshift
 categories: [web-development, Django, Openshift]
 tags: [Django, Openshift]
-published: True
+jekyll_published: True
 date: 2015-01-05
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title: "Tying out ARChon: the android app runtime for chrome" 
 categories: []
 tags: []
-published: True
+jekyll_published: True
 date: 2015-01-03
 ---
 
