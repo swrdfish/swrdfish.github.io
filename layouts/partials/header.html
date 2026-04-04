@@ -4,10 +4,10 @@
 
     {{ if or (not (.Param "hideHeader")) .IsHome }}
 
-    <div class="header-logo-title">
+    <a href="/" class="header-logo-title">
         <img src="/swordfish.svg" alt="swordfish logo" class="header-logo" />
         <h1 class="header-title">{{ site.Title }}</h1>
-    </div>
+    </a>
 
     <div class="flex">
         {{ $currentPage := . }}
