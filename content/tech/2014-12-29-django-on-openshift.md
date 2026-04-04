@@ -1,6 +1,6 @@
 ---
 layout: post
-title: django on Openshift
+title: Django on Openshift
 categories: [web-development, ]
 tags: [django, openshift]
 jekyll_published: True
@@ -13,54 +13,54 @@ date: 2014-12-29
 In comes ***Openshift*** to the rescue. It provides a 1GB filesystem which doesnot refresh and a free database which is quiet generous. So right now I'm trying to host a django app on Openshift and I'll document the steps that I take here.
 
 
-#Steps:
+# Steps:
 
-### 1.Create a python app using the web interface. ###
+### 1. Create a python app using the web interface.
 Or using the command line:
-{% highlight bash %}
-    rhc app-create mypythonapp python-2.7
-{% endhighlight %}
+```bash
+rhc app-create mypythonapp python-2.7
+```
 
 
-### 2.Clone the source code. ###
+### 2. Clone the source code.
 Can get git url form your apps [web console](https://openshift.redhat.com/app/console/applications).
-{% highlight bash %}
-    git clone <your apps git repo url.>
-{% endhighlight %}
+```bash
+git clone <your apps git repo url.>
+```
 
 
-### 3.Locally create a django app. ###
+### 3. Locally create a django app.
 Now you can modify the source, but its better to start from scratch. So ceate a new django app:
-{% highlight bash %}
-    django-admin startproject mydjangoapp
-{% endhighlight %}
+```bash
+django-admin startproject mydjangoapp
+```
 
 
-### 4.Install gunicorn and set it up: ###
+### 4. Install gunicorn and set it up:
 Follow the instructions on the [gunicorn website](http://gunicorn.org/) to setup gunicorn:
-{% highlight bash %}
-    pip install gunicorn
-{% endhighlight %}
+```bash
+pip install gunicorn
+```
 
 
-### 5.Copy reqired files from cloned source. ###
+### 5. Copy required files from cloned source.
 Copy the following from the cloned source of your Openshift app to the root of the django app: `.openshift`, `setup.py`, `requirements.txt`
 
 
-### 6.Generate the requirements file.###
-{% highlight bash %}
-    pip freeze > requirements.txt
-{% endhighlight %}
+### 6. Generate the requirements file.
+```bash
+pip freeze > requirements.txt
+```
 
 
-### 7.Ceate the app.py file ###
+### 7. Create the app.py file
 OpenShift runs this app.py file as the entry point into the app. We are using gunicorn so we need to start gunicorn server from here. To do this follow the instructions in the following links:
 
-+ [Getting Started with Python 2.6, 2.7, and 3.3)](https://developers.openshift.com/en/python-getting-started.html#step4)
-+ [Gunicorn Custom Application](http://gunicorn-docs.readthedocs.org/en/latest/custom.html) 
++ [Getting Started with Python 2.6, 2.7, and 3.3](https://developers.openshift.com/en/python-getting-started.html#step4)
++ [Gunicorn Custom Application](http://gunicorn-docs.readthedocs.org/en/latest/custom.html)
 
-The final app.py file will look something like this
-{% highlight python %}
+The final app.py file will look something like this:
+```python
 #!/usr/bin/python
 from __future__ import unicode_literals
 import os
@@ -113,31 +113,26 @@ if __name__ == '__main__':
         'workers': number_of_workers(),
     }
     StandaloneApplication(wsgi.application, options).run()
+```
 
-{% endhighlight %}
 
-
-### 8.Commit all the changes and push to Openshift ###
+### 8. Commit all the changes and push to Openshift
 Commit all files in `mydjangoapp` to a git repo.
-{% highlight bash %}
-    git init
-
+```bash
+git init
 git add *
+git commit -m 'initial commit'
+```
 
-git commit -m'initial commit'
-{% endhighlight %}
-
-Then push this repo to Openshift
-{% highlight bash %}
-    git remote add openshift <git url of mypythonapp>
-
+Then push this repo to Openshift:
+```bash
+git remote add openshift <git url of mypythonapp>
 git push openshift
-{% endhighlight %}
+```
 
 
-### 9.Adding environment variables if necessary ###
-Follow the instructions [here](https://help.openshift.com/hc/en-us/articles/202399310-How-to-create-and-use-environment-variables-on-the-server-){: target blank}
-
+### 9. Adding environment variables if necessary
+Follow the instructions [here](https://help.openshift.com/hc/en-us/articles/202399310-How-to-create-and-use-environment-variables-on-the-server-)
 
 
 And that should do the job.

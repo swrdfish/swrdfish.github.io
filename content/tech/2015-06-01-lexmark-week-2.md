@@ -10,6 +10,8 @@ date: 2015-06-01 15:36:09
 
 So one more week just flew past! Progress: not much.. I spent the whole week studying.. 
 
+<!--more-->
+
 ### Progress: Week 2
 + Got a pretty good understanding of [SOAP](http://www.w3.org/TR/soap) and [WSDL](http://www.w3.org/TR/wsdl20)
 + Got and overview of the tls/ssl protocol and how the whole certification system works.. but the protocol is huge and would need some more time and fiddling to wrap my head around it.

@@ -2,7 +2,7 @@
 <html lang="en-us"
   dir="ltr">
 
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 
@@ -10,11 +10,11 @@
 
 <title>
     
-    using jenkins on openshift | Swrdfish
+    Using jenkins on openshift | Swrdfish
     
 </title>
 
-<link rel="canonical" href="http://localhost:1313/tech/2015-01-03-using-jenkins-on-openshift/" />
+<link rel="canonical" href="https://swrdfish.github.io/tech/2015-01-03-using-jenkins-on-openshift/" />
 
 
 
@@ -27,7 +27,9 @@
 
 
 
-<link rel="stylesheet" href="/assets/combined.min.a6824bbee0d90d5af09fed9b70395ce7076b615e315037455d903314e96ef91b.css" media="all">
+<link rel="stylesheet" href="/assets/combined.min.b2a8517b0f9c132a8bb553035dd84d118d8a94f29ffcd751f8974f929c11335e.css" media="all">
+
+
 
 
 
@@ -51,7 +53,10 @@
 
     
 
-    <h1 class="header-title">Swrdfish</h1>
+    <div class="header-logo-title">
+        <img src="/swordfish.svg" alt="swordfish logo" class="header-logo" />
+        <h1 class="header-title">Swrdfish</h1>
+    </div>
 
     <div class="flex">
         
@@ -59,28 +64,28 @@
         
         
       
-        <p class="small ">
+        <p class="navigation ">
             <a href="/" >
                 /home
             </a>
         </p>
         
       
-        <p class="small ">
+        <p class="navigation ">
             <a href="/tech" >
                 /tech
             </a>
         </p>
         
       
-        <p class="small ">
+        <p class="navigation ">
             <a href="/travel" >
                 /travel
             </a>
         </p>
         
       
-        <p class="small ">
+        <p class="navigation ">
             <a href="/bookmarks" >
                 /bookmarks
             </a>
@@ -109,7 +114,7 @@
     <a href="/tech/">Tech</a>
     <span class="breadcrumbs-separator"> > </span>
     
-    <a class="breadcrumbs-current" href="/tech/2015-01-03-using-jenkins-on-openshift/">using jenkins on openshift</a>
+    <a class="breadcrumbs-current" href="/tech/2015-01-03-using-jenkins-on-openshift/">Using jenkins on openshift</a>
 </div>
 
 
@@ -119,7 +124,7 @@
 
     
 
-    <h1 class="single-title">using jenkins on openshift</h1>
+    <h1 class="single-title">Using jenkins on openshift</h1>
     
 
     
@@ -145,37 +150,34 @@
   
 
   <div class="single-content">
-    <p>So I have got my django app running on Openshift. ([how to run django app on Openshift]({% post_url 2014-12-29-django-on-openshift %}))
+    <p>So I have got my django app running on Openshift. (<a href="/tech/2014-12-29-django-on-openshift/">how to run django app on Openshift</a>
+)
 Now I wanted to automate the deployment of the app from a Github repo. The tool people use to do this is called Jenkins. So here&rsquo;s the rundown of what I have been able to achieve.</p>
 <p>First of all I havent been able to automatically build the app for deployment. What I&rsquo;ve been able to do is setup a jenkins server, create a new job which receives an event from Github notifying a modification, after receiving which it simply pulls the changes from Github and pushes it to the Openshift server running the django app. On receiving the push the django app is rebuilt and deployed. Therefore I don&rsquo;t have to push the app to both Github and django. But it would be better to have continous integration as the Openshift server stops the django app during rebuild so it becomes unreachable. So next step would be to implement CI.</p>
-<p>#Steps to get Jenkins up and running</p>
-<p>###1. Create a jenkins app
-{% highlight bash %}
-rhc app create jenkins jenkins-1
-{% endhighlight %}</p>
-<p>###2. Login to the jenkins using ssh</p>
-<p>###3. Create a file <code>git-ssh.sh</code> in the data directory
-Create a file named <code>git-ssh.sh</code> in the <code>$OPENSHIFT_DATA_DIR</code> and put the following code inside it.</p>
-<p>{% highlight bash %}
-#!/bin/bash</p>
-<pre><code>ID_RSA=&quot;${OPENSHIFT_DATA_DIR}id_rsa&quot;
-KNOWN_HOSTS=&quot;${OPENSHIFT_DATA_DIR}known_hosts&quot;
-
-ssh -o UserKnownHostsFile=$KNOWN_HOSTS -i $ID_RSA $1 $2 
-</code></pre>
-<p>{% endhighlight %}</p>
-<p>###4. Generate ssh keys
-We need to generate the ssh keys needed for git pull/push to work.
-{% highlight bash %}
-ssh-keygen -t rsa
-{% endhighlight %}
-Enter the path to the id_rsa file pointed to by git-ssh.sh ie <code>${OPENSHIFT_DATA_DIR}id_rsa</code>
+<h1 id="steps-to-get-jenkins-up-and-running">Steps to get Jenkins up and running</h1>
+<h3 id="1-create-a-jenkins-app">1. Create a jenkins app</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rhc app create jenkins jenkins-1
+</span></span></code></pre></div><h3 id="2-login-to-the-jenkins-using-ssh">2. Login to the jenkins using ssh</h3>
+<h3 id="3-create-a-file-git-sshsh-in-the-data-directory">3. Create a file <code>git-ssh.sh</code> in the data directory</h3>
+<p>Create a file named <code>git-ssh.sh</code> in the <code>$OPENSHIFT_DATA_DIR</code> and put the following code inside it.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">ID_RSA</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">OPENSHIFT_DATA_DIR</span><span class="si">}</span><span class="s2">id_rsa&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">KNOWN_HOSTS</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">OPENSHIFT_DATA_DIR</span><span class="si">}</span><span class="s2">known_hosts&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ssh -o <span class="nv">UserKnownHostsFile</span><span class="o">=</span><span class="nv">$KNOWN_HOSTS</span> -i <span class="nv">$ID_RSA</span> <span class="nv">$1</span> <span class="nv">$2</span> 
+</span></span></code></pre></div><h3 id="4-generate-ssh-keys">4. Generate ssh keys</h3>
+<p>We need to generate the ssh keys needed for git pull/push to work.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh-keygen -t rsa
+</span></span></code></pre></div><p>Enter the path to the id_rsa file pointed to by git-ssh.sh ie <code>${OPENSHIFT_DATA_DIR}id_rsa</code>
 Keep the passphrase field blank.</p>
-<p>###5. Put the public key on Github and Openshift
-Copy the public key just created and add it to the list of SSH keys in <a href="https://github.com/settings/ssh">Github</a> and <a href="https://openshift.redhat.com/app/console/settings">Openshift</a>.
+<h3 id="5-put-the-public-key-on-github-and-openshift">5. Put the public key on Github and Openshift</h3>
+<p>Copy the public key just created and add it to the list of SSH keys in <a href="https://github.com/settings/ssh" target="_blank" rel="noopener noreferrer">Github</a>
+ and <a href="https://openshift.redhat.com/app/console/settings" target="_blank" rel="noopener noreferrer">Openshift</a>
+.
 The public key is located at <code>${OPENSHIFT_DATA_DIR}id_rsa.pub</code></p>
-<p>###6. Now open your jenkins dashboard and create a new job
-Open the jenkins server that you just created on Openshift. Once you get to the dashboard, create a new job with the following properties:</p>
+<h3 id="6-now-open-your-jenkins-dashboard-and-create-a-new-job">6. Now open your jenkins dashboard and create a new job</h3>
+<p>Open the jenkins server that you just created on Openshift. Once you get to the dashboard, create a new job with the following properties:</p>
 <ul>
 <li><code>Item name: my-bldr</code> you can give any name you wish</li>
 <li><code>Build a free-style software project</code> select this option and click ok</li>
@@ -189,34 +191,37 @@ Open the jenkins server that you just created on Openshift. Once you get to the 
 <li><code>Source code management: Git</code></li>
 <li>Then enter the details of git repo you want to pull from</li>
 <li>We&rsquo;ll setup the trigger a little later</li>
-<li>Now add a Build script of type <code>Execute shell</code> and enter the following code there and save the job:
-{% highlight bash%}
-#/bin/bash</li>
+<li>Now add a Build script of type <code>Execute shell</code> and enter the following code there and save the job:</li>
 </ul>
-<p>echo &ldquo;Trying to push.. &quot;</p>
-<p>git checkout master</p>
-<p>git pull</p>
-<p>git push -f dest master</p>
-<p>{% endhighlight %}</p>
-<p>###7. Add to the list of khown hosts
-Login in to the jenkins server using ssh and then run the following commands:
-{% highlight bash%}
-export GIT_SSH=${OPENSHIFT_DATA_DIR}git-ssh.sh</p>
-<p>#replace <!-- raw HTML omitted --> with ssh url of your repo
-git -c core.askpass=true ls-remote -h <!-- raw HTML omitted --> HEAD</p>
-<p>#replace <!-- raw HTML omitted --> with ssh url of git repo of your openshift app
-git -c core.askpass=true ls-remote -h <!-- raw HTML omitted -->
-{% endhighlight %}</p>
-<p>###8. Configure jenkins to add required environment variable
-Go to <code>Manage Jenkins &gt; Configure System</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#/bin/bash</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Trying to push.. &#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">git checkout master
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">git pull
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">git push -f dest master
+</span></span></code></pre></div><h3 id="7-add-to-the-list-of-known-hosts">7. Add to the list of known hosts</h3>
+<p>Login in to the jenkins server using ssh and then run the following commands:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">GIT_SSH</span><span class="o">=</span><span class="si">${</span><span class="nv">OPENSHIFT_DATA_DIR</span><span class="si">}</span>git-ssh.sh
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#replace &lt;Github repo url&gt; with ssh url of your repo </span>
+</span></span><span class="line"><span class="cl">git -c core.askpass<span class="o">=</span><span class="nb">true</span> ls-remote -h &lt;Github repo url&gt; HEAD
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#replace &lt;Openshift repo url&gt; with ssh url of git repo of your openshift app</span>
+</span></span><span class="line"><span class="cl">git -c core.askpass<span class="o">=</span><span class="nb">true</span> ls-remote -h &lt;Openshift repo url&gt; 
+</span></span></code></pre></div><h3 id="8-configure-jenkins-to-add-required-environment-variable">8. Configure jenkins to add required environment variable</h3>
+<p>Go to <code>Manage Jenkins &gt; Configure System</code></p>
 <ul>
 <li>In <code>Global properties</code> check <code>Environment variables</code></li>
 <li>Add the following: <code>name: GIT_SSH</code>, <code>value: ${OPENSHIFT_DATA_DIR}git-ssh.sh</code></li>
 <li>save</li>
 </ul>
-<p>###9. Thats it now open my-bldr and click Build Now.
-If I haven&rsquo;t missed anything then build should be successful.</p>
-<p>Next step would be to add the <a href="https://wiki.jenkins-ci.org/display/JENKINS/Github+Plugin">Github plugin</a> and follow their instructions to add a trigger so that a push to your git repo triggers a build.</p>
+<h3 id="9-thats-it-now-open-my-bldr-and-click-build-now">9. Thats it now open my-bldr and click Build Now.</h3>
+<p>If I haven&rsquo;t missed anything then build should be successful.</p>
+<p>Next step would be to add the <a href="https://wiki.jenkins-ci.org/display/JENKINS/Github&#43;Plugin" target="_blank" rel="noopener noreferrer">Github plugin</a>
+ and follow their instructions to add a trigger so that a push to your git repo triggers a build.</p>
 
     
   </div>
@@ -237,7 +242,7 @@ If I haven&rsquo;t missed anything then build should be successful.</p>
                 <div class="single-pagination-text">←</div>
                 <div class="single-pagination-text">
                     <a href="/tech/2014-12-29-django-on-openshift/">
-                        django on Openshift
+                        Django on Openshift
                     </a>
                 </div>
             </div>

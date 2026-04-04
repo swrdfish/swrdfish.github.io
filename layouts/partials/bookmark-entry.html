@@ -8,7 +8,7 @@
     <p class="line-date">{{ .Date.Format $dateFormat }}</p>
 
     <div>
-        <p class="line-title">
+        <p class="bookmark line-title">
             {{ with .Params.link }}
             <a href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ $.Title }}</a>
             {{ else }}
@@ -17,7 +17,7 @@
         </p>
 
         {{ with .Params.description }}
-        <p class="line-summary">{{ . }}</p>
+        <p class="bookmark line-summary">{{ . }}</p>
         {{ end }}
     </div>
 </div>

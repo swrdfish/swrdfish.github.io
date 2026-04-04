@@ -8,7 +8,7 @@ date: 2015-01-03
 ---
 
 
-Ok, following the instructions on [Lifehacher](http://lifehacker.com/how-to-run-android-apps-inside-chrome-on-any-desktop-op-1637564101){:target="_blank"} I've managed to install android app runtime called [ARChon](https://github.com/vladikoff/chromeos-apk/blob/master/archon.md){:target="_blank"} on chrome. And the thing works great! :D
+Ok, following the instructions on [Lifehacher](http://lifehacker.com/how-to-run-android-apps-inside-chrome-on-any-desktop-op-1637564101) I've managed to install android app runtime called [ARChon](https://github.com/vladikoff/chromeos-apk/blob/master/archon.md) on chrome. And the thing works great! :D
 
 
 Here are some screen shots:

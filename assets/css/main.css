@@ -66,7 +66,7 @@ pre {
   border-radius: var(--code-border-radius);
   margin-top: var(--code-margin-top);
   margin-bottom: var(--code-margin-bottom);
-  background-color: var(--code-background) !important;
+  background-color: var(--code-background);
   overflow-x: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -134,6 +134,17 @@ hr {
   margin-right: var(--header-menu-side-gap);
 }
 
+.header-logo-title {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.header-logo {
+  height: 3.6em;
+  width: auto;
+}
+
 .header-title {
   font-size: 2.6em;
   font-weight: bold;
@@ -189,6 +200,16 @@ footer a {
 
 .line-title {
   margin: 0;
+  font-weight: bold;
+}
+
+.line-title a {
+  text-decoration: none;
+  color: var(--content-primary);
+}
+
+.line-title a:hover {
+  text-decoration: underline;
 }
 
 .tag-title {
@@ -196,12 +217,21 @@ footer a {
 }
 
 .line-summary {
-  font-size: small;
+  font-size: var(--p-font-size);
   margin-top: .2rem !important;
-  /* font-style: italic; */
-  color: var(--content-secondary);
+  margin-bottom: 3rem;
 }
 
+.bookmark.line-summary  {
+  color: var(--content-secondary);
+  font-size: small;
+  margin-bottom: .2rem !;
+}
+
+.bookmark.line-title {
+  font-weight: lighter;
+  text-decoration: underline;
+}
 .list-container {
   padding-bottom: 3rem;
 }

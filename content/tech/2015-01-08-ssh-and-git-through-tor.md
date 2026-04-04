@@ -17,16 +17,16 @@ Solution, as always **TOR**. I configured ssh to use the tor socket and volla ev
 
 
 ### 1. Install connect-proxy: ###
-{% highlight bash%}
+```bash
 sudo apt-get install connect-proxy
-{% endhighlight %}
+```
 
 
 ### 2. Add config file for ssh to work with connect: ###
 Create a file `~/.ssh/config` and put the following inside it
-{% highlight bash %}
+```bash
 ProxyCommand connect -5 -S localhost:9050 `tor-resolve %h` %p
-{% endhighlight %}
+```
 
 Here `9050` is the default tor port, change it if yours is different. 
 This should be enough to get ssh working through tor. If you are prompted for a socks5 password then follow the next step.
@@ -34,28 +34,28 @@ This should be enough to get ssh working through tor. If you are prompted for a 
 
 ### 3. Set socks5 password for tor:
 Edit the `/etc/torsocks.conf` file and add the following:
-{% highlight bash %}
+```bash
 default_user = binayak      # put your username here
 default_pass = hello        # set a desired password
-{% endhighlight %}
+```
 
 And also add the `SOCKS5_PASSWORD` environment variable( in `~/.bashrc` file):
-{% highlight bash %}
+```bash
 export SOCKS5_PASSWORD="hello"
-{% endhighlight %}
+```
 
 
 ### 4. Get the git:// protocol working with tor:
 Create a file `~/.torgit` and put the following there
-{% highlight bash %}
+```bash
 #!/bin/sh
 exec connect -5 -S localhost:9050 "$@"
-{% endhighlight %}
+```
 
 And add the `GIT_PROXY_COMMAND` environment variable ( in `~/.bashrc` file):
-{% highlight bash %}
+```bash
 export GIT_PROXY_COMMAND=~/.torgit
-{% endhighlight %}
+```
 [Source](https://oniondigest.wordpress.com/2010/04/16/using-git-with-tor/)
 
 Yup thats all there is to it..

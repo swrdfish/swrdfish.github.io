@@ -2,24 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bookmarks on Swrdfish</title>
-    <link>http://localhost:1313/bookmarks/</link>
+    <link>https://swrdfish.github.io/bookmarks/</link>
     <description>Recent content in Bookmarks on Swrdfish</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 31 Mar 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/bookmarks/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://swrdfish.github.io/bookmarks/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Simon Willison’s Weblog</title>
+      <link>https://swrdfish.github.io/bookmarks/simonwillison/</link>
+      <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://swrdfish.github.io/bookmarks/simonwillison/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>XXIIVV</title>
+      <link>https://swrdfish.github.io/bookmarks/xiivvv/</link>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://swrdfish.github.io/bookmarks/xiivvv/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>マリウス</title>
+      <link>https://swrdfish.github.io/bookmarks/%E3%83%9E%E3%83%AA%E3%82%A6%E3%82%B9/</link>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://swrdfish.github.io/bookmarks/%E3%83%9E%E3%83%AA%E3%82%A6%E3%82%B9/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Coding Horror</title>
-      <link>http://localhost:1313/bookmarks/coding-horror/</link>
+      <link>https://swrdfish.github.io/bookmarks/coding-horror/</link>
       <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/bookmarks/coding-horror/</guid>
+      <guid>https://swrdfish.github.io/bookmarks/coding-horror/</guid>
       <description></description>
     </item>
     <item>
       <title>Hacker News</title>
-      <link>http://localhost:1313/bookmarks/hacker-news/</link>
+      <link>https://swrdfish.github.io/bookmarks/hacker-news/</link>
       <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/bookmarks/hacker-news/</guid>
+      <guid>https://swrdfish.github.io/bookmarks/hacker-news/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Peter Steinberger blog</title>
+      <link>https://swrdfish.github.io/bookmarks/steipete/</link>
+      <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://swrdfish.github.io/bookmarks/steipete/</guid>
       <description></description>
     </item>
   </channel>

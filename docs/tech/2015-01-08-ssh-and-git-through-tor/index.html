@@ -27,7 +27,7 @@
 
 
 
-<link rel="stylesheet" href="/assets/combined.min.a6824bbee0d90d5af09fed9b70395ce7076b615e315037455d903314e96ef91b.css" media="all">
+<link rel="stylesheet" href="/assets/combined.min.b2a8517b0f9c132a8bb553035dd84d118d8a94f29ffcd751f8974f929c11335e.css" media="all">
 
 
 
@@ -53,7 +53,10 @@
 
     
 
-    <h1 class="header-title">Swrdfish</h1>
+    <div class="header-logo-title">
+        <img src="/swordfish.svg" alt="swordfish logo" class="header-logo" />
+        <h1 class="header-title">Swrdfish</h1>
+    </div>
 
     <div class="flex">
         
@@ -61,28 +64,28 @@
         
         
       
-        <p class="small ">
+        <p class="navigation ">
             <a href="/" >
                 /home
             </a>
         </p>
         
       
-        <p class="small ">
+        <p class="navigation ">
             <a href="/tech" >
                 /tech
             </a>
         </p>
         
       
-        <p class="small ">
+        <p class="navigation ">
             <a href="/travel" >
                 /travel
             </a>
         </p>
         
       
-        <p class="small ">
+        <p class="navigation ">
             <a href="/bookmarks" >
                 /bookmarks
             </a>
@@ -151,37 +154,26 @@
 <p>Most git repositories provide ssh links. So to get git working I needed to get ssh working first. A simple <code>nmap</code> showed that there are 4 ports open on the proxy server one of them being the ssh port: 22. So I guessed I only needed to tunnel the ssh request using http connect. But turns they have tunneling blocked for port 22.</p>
 <p>Solution, as always <strong>TOR</strong>. I configured ssh to use the tor socket and volla every thing was working including git. So here goes the few steps to get ssh working with TOR:</p>
 <h3 id="1-install-connect-proxy">1. Install connect-proxy:</h3>
-<p>{% highlight bash%}
-sudo apt-get install connect-proxy
-{% endhighlight %}</p>
-<h3 id="2-add-config-file-for-ssh-to-work-with-connect">2. Add config file for ssh to work with connect:</h3>
-<p>Create a file <code>~/.ssh/config</code> and put the following inside it
-{% highlight bash %}
-ProxyCommand connect -5 -S localhost:9050 <code>tor-resolve %h</code> %p
-{% endhighlight %}</p>
-<p>Here <code>9050</code> is the default tor port, change it if yours is different.
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt-get install connect-proxy
+</span></span></code></pre></div><h3 id="2-add-config-file-for-ssh-to-work-with-connect">2. Add config file for ssh to work with connect:</h3>
+<p>Create a file <code>~/.ssh/config</code> and put the following inside it</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ProxyCommand connect -5 -S localhost:9050 <span class="sb">`</span>tor-resolve %h<span class="sb">`</span> %p
+</span></span></code></pre></div><p>Here <code>9050</code> is the default tor port, change it if yours is different.
 This should be enough to get ssh working through tor. If you are prompted for a socks5 password then follow the next step.</p>
 <h3 id="3-set-socks5-password-for-tor">3. Set socks5 password for tor:</h3>
-<p>Edit the <code>/etc/torsocks.conf</code> file and add the following:
-{% highlight bash %}
-default_user = binayak      # put your username here
-default_pass = hello        # set a desired password
-{% endhighlight %}</p>
-<p>And also add the <code>SOCKS5_PASSWORD</code> environment variable( in <code>~/.bashrc</code> file):
-{% highlight bash %}
-export SOCKS5_PASSWORD=&ldquo;hello&rdquo;
-{% endhighlight %}</p>
-<h3 id="4-get-the-git-protocol-working-with-tor">4. Get the git:// protocol working with tor:</h3>
-<p>Create a file <code>~/.torgit</code> and put the following there
-{% highlight bash %}
-#!/bin/sh
-exec connect -5 -S localhost:9050 &ldquo;$@&rdquo;
-{% endhighlight %}</p>
-<p>And add the <code>GIT_PROXY_COMMAND</code> environment variable ( in <code>~/.bashrc</code> file):
-{% highlight bash %}
-export GIT_PROXY_COMMAND=~/.torgit
-{% endhighlight %}
-<a href="https://oniondigest.wordpress.com/2010/04/16/using-git-with-tor/">Source</a></p>
+<p>Edit the <code>/etc/torsocks.conf</code> file and add the following:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">default_user</span> <span class="o">=</span> binayak      <span class="c1"># put your username here</span>
+</span></span><span class="line"><span class="cl"><span class="nv">default_pass</span> <span class="o">=</span> hello        <span class="c1"># set a desired password</span>
+</span></span></code></pre></div><p>And also add the <code>SOCKS5_PASSWORD</code> environment variable( in <code>~/.bashrc</code> file):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">SOCKS5_PASSWORD</span><span class="o">=</span><span class="s2">&#34;hello&#34;</span>
+</span></span></code></pre></div><h3 id="4-get-the-git-protocol-working-with-tor">4. Get the git:// protocol working with tor:</h3>
+<p>Create a file <code>~/.torgit</code> and put the following there</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/sh
+</span></span></span><span class="line"><span class="cl"><span class="nb">exec</span> connect -5 -S localhost:9050 <span class="s2">&#34;</span><span class="nv">$@</span><span class="s2">&#34;</span>
+</span></span></code></pre></div><p>And add the <code>GIT_PROXY_COMMAND</code> environment variable ( in <code>~/.bashrc</code> file):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">GIT_PROXY_COMMAND</span><span class="o">=</span>~/.torgit
+</span></span></code></pre></div><p><a href="https://oniondigest.wordpress.com/2010/04/16/using-git-with-tor/" target="_blank" rel="noopener noreferrer">Source</a>
+</p>
 <p>Yup thats all there is to it..</p>
 
     

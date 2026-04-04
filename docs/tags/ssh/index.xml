@@ -13,7 +13,7 @@
       <link>https://swrdfish.github.io/tech/2015-01-08-ssh-and-git-through-tor/</link>
       <pubDate>Thu, 08 Jan 2015 00:00:00 +0000</pubDate>
       <guid>https://swrdfish.github.io/tech/2015-01-08-ssh-and-git-through-tor/</guid>
-      <description>&lt;p&gt;As I mentioned before our college network has this squid proxy which makes us spend more time configuring our tools to bypass it than doing any actual work. My goal this time was to get ssh working behind the proxy.&lt;/p&gt;&#xA;&lt;p&gt;Most git repositories provide ssh links. So to get git working I needed to get ssh working first. A simple &lt;code&gt;nmap&lt;/code&gt; showed that there are 4 ports open on the proxy server one of them being the ssh port: 22. So I guessed I only needed to tunnel the ssh request using http connect. But turns they have tunneling blocked for port 22.&lt;/p&gt;</description>
+      <description>&lt;p&gt;As I mentioned before our college network has this squid proxy which makes us spend more time configuring our tools to bypass it than doing any actual work. My goal this time was to get ssh working behind the proxy.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

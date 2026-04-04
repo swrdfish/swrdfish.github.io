@@ -2,7 +2,7 @@
 <html lang="en-us"
   dir="ltr">
 
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 
@@ -10,11 +10,11 @@
 
 <title>
     
-    django on Openshift | Swrdfish
+    Django on Openshift | Swrdfish
     
 </title>
 
-<link rel="canonical" href="http://localhost:1313/tech/2014-12-29-django-on-openshift/" />
+<link rel="canonical" href="https://swrdfish.github.io/tech/2014-12-29-django-on-openshift/" />
 
 
 
@@ -27,7 +27,9 @@
 
 
 
-<link rel="stylesheet" href="/assets/combined.min.a6824bbee0d90d5af09fed9b70395ce7076b615e315037455d903314e96ef91b.css" media="all">
+<link rel="stylesheet" href="/assets/combined.min.b2a8517b0f9c132a8bb553035dd84d118d8a94f29ffcd751f8974f929c11335e.css" media="all">
+
+
 
 
 
@@ -51,7 +53,10 @@
 
     
 
-    <h1 class="header-title">Swrdfish</h1>
+    <div class="header-logo-title">
+        <img src="/swordfish.svg" alt="swordfish logo" class="header-logo" />
+        <h1 class="header-title">Swrdfish</h1>
+    </div>
 
     <div class="flex">
         
@@ -59,28 +64,28 @@
         
         
       
-        <p class="small ">
+        <p class="navigation ">
             <a href="/" >
                 /home
             </a>
         </p>
         
       
-        <p class="small ">
+        <p class="navigation ">
             <a href="/tech" >
                 /tech
             </a>
         </p>
         
       
-        <p class="small ">
+        <p class="navigation ">
             <a href="/travel" >
                 /travel
             </a>
         </p>
         
       
-        <p class="small ">
+        <p class="navigation ">
             <a href="/bookmarks" >
                 /bookmarks
             </a>
@@ -109,7 +114,7 @@
     <a href="/tech/">Tech</a>
     <span class="breadcrumbs-separator"> > </span>
     
-    <a class="breadcrumbs-current" href="/tech/2014-12-29-django-on-openshift/">django on Openshift</a>
+    <a class="breadcrumbs-current" href="/tech/2014-12-29-django-on-openshift/">Django on Openshift</a>
 </div>
 
 
@@ -119,7 +124,7 @@
 
     
 
-    <h1 class="single-title">django on Openshift</h1>
+    <h1 class="single-title">Django on Openshift</h1>
     
 
     
@@ -145,101 +150,100 @@
   
 
   <div class="single-content">
-    <p><a href="https://www.openshift.com/">Openshift</a> is a new app hosting service from RedHat which offers a great free package. Till now I&rsquo;ve used Heroku to host some apps and its great but it doesn&rsquo;t provide any free database (well it does but you&rsquo;ll have to enter your credit card details which in India few people have). Also the filesystem of heroku is such that it refreshes every 24hrs deleting every thing except the repo. So heroku is great for testing but hosting something with somesort of a database is not possible unless you pay.</p>
+    <p><a href="https://www.openshift.com/" target="_blank" rel="noopener noreferrer">Openshift</a>
+ is a new app hosting service from RedHat which offers a great free package. Till now I&rsquo;ve used Heroku to host some apps and its great but it doesn&rsquo;t provide any free database (well it does but you&rsquo;ll have to enter your credit card details which in India few people have). Also the filesystem of heroku is such that it refreshes every 24hrs deleting every thing except the repo. So heroku is great for testing but hosting something with somesort of a database is not possible unless you pay.</p>
 <p>In comes <em><strong>Openshift</strong></em> to the rescue. It provides a 1GB filesystem which doesnot refresh and a free database which is quiet generous. So right now I&rsquo;m trying to host a django app on Openshift and I&rsquo;ll document the steps that I take here.</p>
-<p>#Steps:</p>
-<h3 id="1create-a-python-app-using-the-web-interface">1.Create a python app using the web interface.</h3>
-<p>Or using the command line:
-{% highlight bash %}
-rhc app-create mypythonapp python-2.7
-{% endhighlight %}</p>
-<h3 id="2clone-the-source-code">2.Clone the source code.</h3>
-<p>Can get git url form your apps <a href="https://openshift.redhat.com/app/console/applications">web console</a>.
-{% highlight bash %}
-git clone <!-- raw HTML omitted -->
-{% endhighlight %}</p>
-<h3 id="3locally-create-a-django-app">3.Locally create a django app.</h3>
-<p>Now you can modify the source, but its better to start from scratch. So ceate a new django app:
-{% highlight bash %}
-django-admin startproject mydjangoapp
-{% endhighlight %}</p>
-<h3 id="4install-gunicorn-and-set-it-up">4.Install gunicorn and set it up:</h3>
-<p>Follow the instructions on the <a href="http://gunicorn.org/">gunicorn website</a> to setup gunicorn:
-{% highlight bash %}
-pip install gunicorn
-{% endhighlight %}</p>
-<h3 id="5copy-reqired-files-from-cloned-source">5.Copy reqired files from cloned source.</h3>
+<h1 id="steps">Steps:</h1>
+<h3 id="1-create-a-python-app-using-the-web-interface">1. Create a python app using the web interface.</h3>
+<p>Or using the command line:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rhc app-create mypythonapp python-2.7
+</span></span></code></pre></div><h3 id="2-clone-the-source-code">2. Clone the source code.</h3>
+<p>Can get git url form your apps <a href="https://openshift.redhat.com/app/console/applications" target="_blank" rel="noopener noreferrer">web console</a>
+.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone &lt;your apps git repo url.&gt;
+</span></span></code></pre></div><h3 id="3-locally-create-a-django-app">3. Locally create a django app.</h3>
+<p>Now you can modify the source, but its better to start from scratch. So ceate a new django app:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">django-admin startproject mydjangoapp
+</span></span></code></pre></div><h3 id="4-install-gunicorn-and-set-it-up">4. Install gunicorn and set it up:</h3>
+<p>Follow the instructions on the <a href="http://gunicorn.org/" target="_blank" rel="noopener noreferrer">gunicorn website</a>
+ to setup gunicorn:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pip install gunicorn
+</span></span></code></pre></div><h3 id="5-copy-required-files-from-cloned-source">5. Copy required files from cloned source.</h3>
 <p>Copy the following from the cloned source of your Openshift app to the root of the django app: <code>.openshift</code>, <code>setup.py</code>, <code>requirements.txt</code></p>
-<h3 id="6generate-the-requirements-file">6.Generate the requirements file.###</h3>
-<p>{% highlight bash %}
-pip freeze &gt; requirements.txt
-{% endhighlight %}</p>
-<h3 id="7ceate-the-apppy-file">7.Ceate the app.py file</h3>
+<h3 id="6-generate-the-requirements-file">6. Generate the requirements file.</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pip freeze &gt; requirements.txt
+</span></span></code></pre></div><h3 id="7-create-the-apppy-file">7. Create the app.py file</h3>
 <p>OpenShift runs this app.py file as the entry point into the app. We are using gunicorn so we need to start gunicorn server from here. To do this follow the instructions in the following links:</p>
 <ul>
-<li><a href="https://developers.openshift.com/en/python-getting-started.html#step4">Getting Started with Python 2.6, 2.7, and 3.3)</a></li>
-<li><a href="http://gunicorn-docs.readthedocs.org/en/latest/custom.html">Gunicorn Custom Application</a></li>
+<li><a href="https://developers.openshift.com/en/python-getting-started.html#step4" target="_blank" rel="noopener noreferrer">Getting Started with Python 2.6, 2.7, and 3.3</a>
+</li>
+<li><a href="http://gunicorn-docs.readthedocs.org/en/latest/custom.html" target="_blank" rel="noopener noreferrer">Gunicorn Custom Application</a>
+</li>
 </ul>
-<p>The final app.py file will look something like this
-{% highlight python %}
-#!/usr/bin/python
-from <strong>future</strong> import unicode_literals
-import os
-import sys
-import multiprocessing
-import gunicorn.app.base
-from mydjangoapp import wsgi
-from gunicorn.six import iteritems</p>
-<h1 id="hack-to-make-sure-we-can-load-wsgipy-as-a-module-in-this-class">hack to make sure we can load wsgi.py as a module in this class</h1>
-<p>sys.path.insert(0, os.path.dirname(<strong>file</strong>))</p>
-<p>virtenv = os.environ[&lsquo;OPENSHIFT_PYTHON_DIR&rsquo;] + &lsquo;/virtenv/&rsquo;
-virtualenv = os.path.join(virtenv, &lsquo;bin/activate_this.py&rsquo;)
-try:
-execfile(virtualenv, dict(<strong>file</strong>=virtualenv))
-except IOError:
-pass</p>
-<h1 id="get-the-environment-information-we-need-to-start-the-server">Get the environment information we need to start the server</h1>
-<p>ip = os.environ[&lsquo;OPENSHIFT_PYTHON_IP&rsquo;]
-port = int(os.environ[&lsquo;OPENSHIFT_PYTHON_PORT&rsquo;])
-host_name = os.environ[&lsquo;OPENSHIFT_GEAR_DNS&rsquo;]</p>
-<p>def number_of_workers():
-return (multiprocessing.cpu_count() * 2) + 1</p>
-<p>class StandaloneApplication(gunicorn.app.base.BaseApplication):</p>
-<pre><code>def __init__(self, app, options=None):
-    self.options = options or {}
-    self.application = app
-    super(StandaloneApplication, self).__init__()
-
-def load_config(self):
-    config = dict([(key, value) for key, value in iteritems(self.options)
-                   if key in self.cfg.settings and value is not None])
-    for key, value in iteritems(config):
-        self.cfg.set(key.lower(), value)
-
-def load(self):
-    return self.application
-</code></pre>
-<p>if <strong>name</strong> == &lsquo;<strong>main</strong>&rsquo;:
-options = {
-&lsquo;bind&rsquo;: &lsquo;%s:%s&rsquo; % (ip, port),
-&lsquo;workers&rsquo;: number_of_workers(),
-}
-StandaloneApplication(wsgi.application, options).run()</p>
-<p>{% endhighlight %}</p>
-<h3 id="8commit-all-the-changes-and-push-to-openshift">8.Commit all the changes and push to Openshift</h3>
-<p>Commit all files in <code>mydjangoapp</code> to a git repo.
-{% highlight bash %}
-git init</p>
-<p>git add *</p>
-<p>git commit -m&rsquo;initial commit&rsquo;
-{% endhighlight %}</p>
-<p>Then push this repo to Openshift
-{% highlight bash %}
-git remote add openshift <!-- raw HTML omitted --></p>
-<p>git push openshift
-{% endhighlight %}</p>
-<h3 id="9adding-environment-variables-if-necessary">9.Adding environment variables if necessary</h3>
-<p>Follow the instructions <a href="https://help.openshift.com/hc/en-us/articles/202399310-How-to-create-and-use-environment-variables-on-the-server-">here</a>{: target blank}</p>
+<p>The final app.py file will look something like this:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="ch">#!/usr/bin/python</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">sys</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">multiprocessing</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">gunicorn.app.base</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">mydjangoapp</span> <span class="kn">import</span> <span class="n">wsgi</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">gunicorn.six</span> <span class="kn">import</span> <span class="n">iteritems</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># hack to make sure we can load wsgi.py as a module in this class</span>
+</span></span><span class="line"><span class="cl"><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">virtenv</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;OPENSHIFT_PYTHON_DIR&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;/virtenv/&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">virtualenv</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">virtenv</span><span class="p">,</span> <span class="s1">&#39;bin/activate_this.py&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">execfile</span><span class="p">(</span><span class="n">virtualenv</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="vm">__file__</span><span class="o">=</span><span class="n">virtualenv</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="k">except</span> <span class="ne">IOError</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">pass</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Get the environment information we need to start the server</span>
+</span></span><span class="line"><span class="cl"><span class="n">ip</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;OPENSHIFT_PYTHON_IP&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">port</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;OPENSHIFT_PYTHON_PORT&#39;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="n">host_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;OPENSHIFT_GEAR_DNS&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">number_of_workers</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">(</span><span class="n">multiprocessing</span><span class="o">.</span><span class="n">cpu_count</span><span class="p">()</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">StandaloneApplication</span><span class="p">(</span><span class="n">gunicorn</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">BaseApplication</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">app</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">options</span> <span class="o">=</span> <span class="n">options</span> <span class="ow">or</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">application</span> <span class="o">=</span> <span class="n">app</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">super</span><span class="p">(</span><span class="n">StandaloneApplication</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">load_config</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">config</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">iteritems</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                       <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cfg</span><span class="o">.</span><span class="n">settings</span> <span class="ow">and</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">iteritems</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">cfg</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">key</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="n">value</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">application</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">options</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;bind&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">:</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">ip</span><span class="p">,</span> <span class="n">port</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;workers&#39;</span><span class="p">:</span> <span class="n">number_of_workers</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">StandaloneApplication</span><span class="p">(</span><span class="n">wsgi</span><span class="o">.</span><span class="n">application</span><span class="p">,</span> <span class="n">options</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</span></span></code></pre></div><h3 id="8-commit-all-the-changes-and-push-to-openshift">8. Commit all the changes and push to Openshift</h3>
+<p>Commit all files in <code>mydjangoapp</code> to a git repo.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git init
+</span></span><span class="line"><span class="cl">git add *
+</span></span><span class="line"><span class="cl">git commit -m <span class="s1">&#39;initial commit&#39;</span>
+</span></span></code></pre></div><p>Then push this repo to Openshift:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git remote add openshift &lt;git url of mypythonapp&gt;
+</span></span><span class="line"><span class="cl">git push openshift
+</span></span></code></pre></div><h3 id="9-adding-environment-variables-if-necessary">9. Adding environment variables if necessary</h3>
+<p>Follow the instructions <a href="https://help.openshift.com/hc/en-us/articles/202399310-How-to-create-and-use-environment-variables-on-the-server-" target="_blank" rel="noopener noreferrer">here</a>
+</p>
 <p>And that should do the job.</p>
 
     
@@ -273,7 +277,7 @@ git remote add openshift <!-- raw HTML omitted --></p>
             <div class="single-pagination-container-next">
                 <div class="single-pagination-text">
                     <a href="/tech/2015-01-03-using-jenkins-on-openshift/">
-                        using jenkins on openshift
+                        Using jenkins on openshift
                     </a>
                 </div>
                 <div class="single-pagination-text">→</div>

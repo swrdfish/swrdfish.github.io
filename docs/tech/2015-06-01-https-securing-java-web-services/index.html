@@ -27,7 +27,7 @@
 
 
 
-<link rel="stylesheet" href="/assets/combined.min.a6824bbee0d90d5af09fed9b70395ce7076b615e315037455d903314e96ef91b.css" media="all">
+<link rel="stylesheet" href="/assets/combined.min.b2a8517b0f9c132a8bb553035dd84d118d8a94f29ffcd751f8974f929c11335e.css" media="all">
 
 
 
@@ -53,7 +53,10 @@
 
     
 
-    <h1 class="header-title">Swrdfish</h1>
+    <div class="header-logo-title">
+        <img src="/swordfish.svg" alt="swordfish logo" class="header-logo" />
+        <h1 class="header-title">Swrdfish</h1>
+    </div>
 
     <div class="flex">
         
@@ -61,28 +64,28 @@
         
         
       
-        <p class="small ">
+        <p class="navigation ">
             <a href="/" >
                 /home
             </a>
         </p>
         
       
-        <p class="small ">
+        <p class="navigation ">
             <a href="/tech" >
                 /tech
             </a>
         </p>
         
       
-        <p class="small ">
+        <p class="navigation ">
             <a href="/travel" >
                 /travel
             </a>
         </p>
         
       
-        <p class="small ">
+        <p class="navigation ">
             <a href="/bookmarks" >
                 /bookmarks
             </a>
@@ -149,34 +152,15 @@
   <div class="single-content">
     <p>As part of my internship project I had to learn about HTTPS, how it works and how to use HTTPS to secure SOAP based web services written in java.</p>
 <h3 id="why-do-we-need-https">Why do we need HTTPS?</h3>
-<p>The document transfer protocol of choice for the internet, <a href="http://www.w3.org/Protocols/">HTTP</a> uses a plain text format for transfering data. Hence anyone who is able to intercept the communication channel(<a href="http://en.wikipedia.org/wiki/Man-in-the-middle_attack">MITM attack</a>) can view everything that is being transmitted by the sender and receiver. This is specially a problem for wireless networks where any one with a pretty basic wireless network adapter can tap into and listen to the communications channel.</p>
-<p>This can be demonstrated using free and opensource tools like <a href="https://www.wireshark.org/">Wireshark</a> and <a href="https://mitmproxy.org/">mitmproxy</a></p>
-<!-- raw HTML omitted -->
-<p>Now lets check login to the same website with https enabled and inspect the packets:
-<!-- raw HTML omitted -->
-
-
-
-
-
-
-
-
-
-
-
-<figure class="">
-
-    <div>
-        <img loading="lazy" alt="Wireshark post data using https" src=" %7b%7bsite.url%7d%7d/assets/ssl/wireshark_https_raw_post.png">
-    </div>
-
-    
-</figure>
-<!-- raw HTML omitted -->
-As you can see from the image below, this time the data sent to the server is encrypted; i.e. the user&rsquo;s credentials are safe.
-<!-- raw HTML omitted -->
-
+<p>The document transfer protocol of choice for the internet, <a href="http://www.w3.org/Protocols/" target="_blank" rel="noopener noreferrer">HTTP</a>
+ uses a plain text format for transfering data. Hence anyone who is able to intercept the communication channel(<a href="http://en.wikipedia.org/wiki/Man-in-the-middle_attack" target="_blank" rel="noopener noreferrer">MITM attack</a>
+) can view everything that is being transmitted by the sender and receiver. This is specially a problem for wireless networks where any one with a pretty basic wireless network adapter can tap into and listen to the communications channel.</p>
+<p>This can be demonstrated using free and opensource tools like <a href="https://www.wireshark.org/" target="_blank" rel="noopener noreferrer">Wireshark</a>
+ and <a href="https://mitmproxy.org/" target="_blank" rel="noopener noreferrer">mitmproxy</a>
+</p>
+<h4 id="demo">Demo:</h4>
+<p>Lets login to a website which does not use https to secure the connection using wireshark.</p>
+<p>
 
 
 
@@ -190,17 +174,94 @@ As you can see from the image below, this time the data sent to the server is en
 <figure class="">
 
     <div>
-        <img loading="lazy" alt="Wireshark ssl encrypted data" src=" %7b%7bsite.url%7d%7d/assets/ssl/wireshark_ssl_encrypted_data.png">
+        <img loading="lazy" alt="Wireshark http raw" src=" /assets/ssl/wireshark_http_raw.png">
     </div>
 
     
-</figure>
-<!-- raw HTML omitted --></p>
+</figure></p>
+<p>If we inspect the packets using wireshark (as seen in the screenshot below) we can easily see the data sent to the server, which in this case are the email and password of the user. Hence anyone who can tap into the network can easily get hold of the login credentials and there by the users authenticity is compromised.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+<figure class="">
+
+    <div>
+        <img loading="lazy" alt="Wireshark http raw post data" src=" /assets/ssl/wireshark_http_raw_post.png">
+    </div>
+
+    
+</figure></p>
+<p>
+
+
+
+
+
+
+
+
+
+
+<figure class="">
+
+    <div>
+        <img loading="lazy" alt="Wireshark http raw post data" src=" /assets/ssl/wireshark_http_raw_post2.png">
+    </div>
+
+    
+</figure></p>
+<p>Now lets check login to the same website with https enabled and inspect the packets:</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+<figure class="">
+
+    <div>
+        <img loading="lazy" alt="Wireshark post data using https" src=" /assets/ssl/wireshark_https_raw_post.png">
+    </div>
+
+    
+</figure></p>
+<p>As you can see from the image below, this time the data sent to the server is encrypted; i.e. the user&rsquo;s credentials are safe.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+<figure class="">
+
+    <div>
+        <img loading="lazy" alt="Wireshark ssl encrypted data" src=" /assets/ssl/wireshark_ssl_encrypted_data.png">
+    </div>
+
+    
+</figure></p>
 <p>So, HTTP by default is not suitable for sending private data. For this we need some protocol which provides data security using encryption like HTTPS</p>
 <h3 id="what-is-tlsssl">What is TLS/SSL?</h3>
-<p>The required data security/encryption can be provided by many mechanisms, but TLS/SSL has become the ubiquitous defacto standard for the Internet. SSL stands for Secure Socket Layer and TLS is Transport Layer Security. Both are more or less the same specifications with minor differences which we can generally ignore.
-<!-- raw HTML omitted -->
-
+<p>The required data security/encryption can be provided by many mechanisms, but TLS/SSL has become the ubiquitous defacto standard for the Internet. SSL stands for Secure Socket Layer and TLS is Transport Layer Security. Both are more or less the same specifications with minor differences which we can generally ignore.</p>
+<p>
 
 
 
@@ -214,50 +275,79 @@ As you can see from the image below, this time the data sent to the server is en
 <figure class="">
 
     <div>
-        <img loading="lazy" alt="Security protocols in different layers" src=" %7b%7bsite.url%7d%7d/assets/ssl/security_layers.png">
+        <img loading="lazy" alt="Security protocols in different layers" src=" /assets/ssl/security_layers.png">
     </div>
 
     
-</figure>
-<!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
+</figure></p>
+<p>
+
+
+
+
+
+
+
+
+
+
+<figure class="">
+
+    <div>
+        <img loading="lazy" alt="SSL in the IP stack" src=" /assets/ssl/ssl_stack.png">
+    </div>
+
+    
+</figure></p>
+<p>As we can see from the above figure, the ssl/tls acts as a layer on top of the transport layer in the IP stack. The connection between the communicating peers is provided by TCP. SSL/TLS acts as a layer in between the transport and application layers and encrypts the data passing through the connection.</p>
 <h3 id="basics-of-encryption">Basics of encryption</h3>
-<p>Broadly speaking there are two kinds of cryptographic techniques used to encrypt data in  SSL: symmetric key and asymmetric key cryptography.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<p>Broadly speaking there are two kinds of cryptographic techniques used to encrypt data in SSL: symmetric key and asymmetric key cryptography.</p>
+<h4 id="symmetric-key-or-secret-key-cryptography">Symmetric key or secret key cryptography:</h4>
+<p>
+
+
+
+
+
+
+
+
+
+
+<figure class="">
+
+    <div>
+        <img loading="lazy" alt="Secret key cryptography" src=" /assets/ssl/symmetric_crypto_system.png">
+    </div>
+
+    
+</figure></p>
+<p>As shown in the figure above, in case of symmetric key cryptography, both the sender and receiver have the same secret key which is used to both encode and decode the data. This technique is fine but we need a way to securely share the secret key.</p>
+<h4 id="asymmetric-key-or-public-key-cryptography">Asymmetric key or public key cryptography:</h4>
+<p>
+
+
+
+
+
+
+
+
+
+
+<figure class="">
+
+    <div>
+        <img loading="lazy" alt="Public key cryptography" src=" /assets/ssl/asymmetric_crypto_system.png">
+    </div>
+
+    
+</figure></p>
 <p>Now in case of asymmetric key or public key cryptography, there is a pair of keys. One is called the private key and the other is called its public counterpart or simply public key.
 Data encrypted with the private key can only be decrypted using the corresponding public key and that encrypted using a public key and only be decrypted using the corresponding private key.
 Hence, in this case the problem of sharing a secret is taken care off.</p>
 <h3 id="a-basic-overview-of-tlsssl">A basic overview of TLS/SSL:</h3>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>At this point in time, the SSL handshake is complete and the client and
-server may begin exchanging application layer protocol data units (using the SSL
-Application Data Protocol).</p>
-<p>Now lets look into the handshake process using wireshark:
-<!-- raw HTML omitted -->
-
-
-
-
-
-
-
-
-
-
-
-<figure class="">
-
-    <div>
-        <img loading="lazy" alt="Wireshark SSL handshake" src=" %7b%7bsite.url%7d%7d/assets/ssl/wireshark_ssl_handshake.png">
-    </div>
-
-    
-</figure>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-
+<p>
 
 
 
@@ -271,14 +361,13 @@ Application Data Protocol).</p>
 <figure class="">
 
     <div>
-        <img loading="lazy" alt="Wireshark SSL certificate" src=" %7b%7bsite.url%7d%7d/assets/ssl/wireshark_ssl_certificate.png">
+        <img loading="lazy" alt="SSL in the IP stack" src=" /assets/ssl/ssl_stack.png">
     </div>
 
     
-</figure>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-
+</figure></p>
+<p><em>Note: Public key encryption is more computationally intensive than Secret key encryption. Hence in case of SSL, public key encryption is used to share the secret. This secret is then used to encrypt the data.</em></p>
+<p>
 
 
 
@@ -292,17 +381,102 @@ Application Data Protocol).</p>
 <figure class="">
 
     <div>
-        <img loading="lazy" alt="Wireshark SSL data" src=" %7b%7bsite.url%7d%7d/assets/ssl/wireshark_https_raw_post3.png">
+        <img loading="lazy" alt="SSL handshake" src=" /assets/ssl/ssl_handshake.png">
     </div>
 
     
-</figure>
-<!-- raw HTML omitted --></p>
+</figure></p>
+<h4 id="the-first-set-of-messages-is-sent-from-the-client-to-the-server">The first set of messages is sent from the client to the server.</h4>
+<ul>
+<li>It only comprises a <code>CLIENTHELLO</code> message.</li>
+</ul>
+<h4 id="the-second-set-of-messages-comprises-2-5-messages-that-are-sent-from-the-server-to-the-client">The second set of messages comprises 2-5 messages that are sent from the server to the client:</h4>
+<ul>
+<li>A <code>SERVERHELLO</code> message is sent in response to the <code>CLIENTHELLO</code> message.</li>
+<li>If the server is to authenticate itself (which is generally the case), it may send a <code>CERTIFICATE</code> message to the client.</li>
+<li>Under some circumstances, the server may send a <code>SERVERKEYEXCHANGE</code> message to the client.</li>
+<li>If the server requires the client to authenticate itself with a certificate, it may send a <code>CERTIFICATEREQUEST</code> message to the client.</li>
+<li>Finally, the server sends a <code>SERVERHELLODONE</code> message to the client.</li>
+<li>After having exchanged <code>CLIENTHELLO</code> and <code>SERVERHELLO</code> messages, the client and server have negotiated a protocol version, a session identifier (ID), a cipher suite, and a compression method. Furthermore, two random values (i.e., <code>ClientHello.random</code> and <code>ServerHello.random</code>), have been generated and are now available for use.</li>
+</ul>
+<h4 id="the-third-set-of-messages-comprises-messages-that-are-again-sent-from-the-client-to-the-server">The third set of messages comprises messages that are again sent from the client to the server:</h4>
+<ul>
+<li>If the server has sent a <code>CERTIFICATEREQUEST</code> message, then the client sends a <code>CERTIFICATE</code> message to the server.</li>
+<li>In the main step of the protocol, the client sends a <code>CLIENTKEYEXCHANGE</code> message to the server. The content of this message depends on the key exchange algorithm in use.</li>
+<li>If the client has sent a certificate to the server, then it must also send a <code>CERTIFICATEVERIFY</code> message to the server. This message is digitally signed with the private key that corresponds to the certificate&rsquo;s public key.</li>
+<li>The client sends a <code>CHANGECIPHERSPEC</code> message to the server (using the SSL Change Cipher Spec Protocol) and copies its pending write state into the current write state.</li>
+<li>The missing type indicates that the <code>CHANGECIPHERSPEC</code> message is not an SSL Handshake Protocol message. Instead, it is an SSL Change Cipher Spec Protocol message (identified with a content type value of 20).</li>
+<li>The client sends a <code>FINISHED</code> message to the server. As mentioned above, this is the first message that is cryptographically protected under the new cipher spec.</li>
+</ul>
+<h4 id="finally-the-fourth-set-of-messages-comprises-two-messages-that-are-sent-from-the-server-to-the-client">Finally, the fourth set of messages comprises two messages that are sent from the server to the client:</h4>
+<ul>
+<li>The server sends another <code>CHANGECIPHERSPEC</code> message to the client and copies its pending write state into the current write state.</li>
+<li>Finally, the server sends a <code>FINISHED</code> message to the client.</li>
+</ul>
+<p>At this point in time, the SSL handshake is complete and the client and server may begin exchanging application layer protocol data units (using the SSL Application Data Protocol).</p>
+<p>Now lets look into the handshake process using wireshark:</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+<figure class="">
+
+    <div>
+        <img loading="lazy" alt="Wireshark SSL handshake" src=" /assets/ssl/wireshark_ssl_handshake.png">
+    </div>
+
+    
+</figure></p>
+<p>
+
+
+
+
+
+
+
+
+
+
+<figure class="">
+
+    <div>
+        <img loading="lazy" alt="Wireshark SSL certificate" src=" /assets/ssl/wireshark_ssl_certificate.png">
+    </div>
+
+    
+</figure></p>
+<p>
+
+
+
+
+
+
+
+
+
+
+<figure class="">
+
+    <div>
+        <img loading="lazy" alt="Wireshark SSL data" src=" /assets/ssl/wireshark_https_raw_post3.png">
+    </div>
+
+    
+</figure></p>
 <h3 id="a-few-words-about-certificates">A few words about certificates:</h3>
 <p>As described earlier the ssl protocol requires that the communicating peers verify their identity using digitally signed certificates. These certificates are generally issued by some trusted certifying authority(CA) which guarantees the identity of the senders.</p>
-<p>The most commonly used format for exchanging these certificates is the <a href="http://en.wikipedia.org/wiki/X.509">X.509</a> format.
-<!-- raw HTML omitted -->
-
+<p>The most commonly used format for exchanging these certificates is the <a href="http://en.wikipedia.org/wiki/X.509" target="_blank" rel="noopener noreferrer">X.509</a>
+ format.</p>
+<p>
 
 
 
@@ -316,29 +490,21 @@ Application Data Protocol).</p>
 <figure class="">
 
     <div>
-        <img loading="lazy" alt="x509 certificate" src=" %7b%7bsite.url%7d%7d/assets/ssl/certificate_struct.png">
+        <img loading="lazy" alt="x509 certificate" src=" /assets/ssl/certificate_struct.png">
     </div>
 
     
-</figure>
-<!-- raw HTML omitted --></p>
-<p>There is another type of cerificate scheme which is gaining popularity called the <a href="http://en.wikipedia.org/wiki/Pretty_Good_Privacy">PGP</a>.</p>
+</figure></p>
+<p>There is another type of cerificate scheme which is gaining popularity called the <a href="http://en.wikipedia.org/wiki/Pretty_Good_Privacy" target="_blank" rel="noopener noreferrer">PGP</a>
+.</p>
 <h3 id="references-and-reading-material">References and Reading material:</h3>
 <ul>
-<li>
-<p><a href="%7B%7Bsite.url%7D%7D/assets/ssl/AppliedCryptography.pdf">Applied Cryptography, Second Edition: Protocols, Algorthms, and Source Code in C</a></p>
-</li>
-<li>
-<p><a href="%7B%7Bsite.url%7D%7D/assets/ssl/SSLandTLSTheoryandPractice.pdf">SSL and TLS Theory and Practice</a></p>
-</li>
-<li>
-<p><a href="https://www.amazon.in/Wireshark-Network-Analysis-Second-Certified-ebook/dp/B008G65O7O">Wireshark Network Analysis</a></p>
-</li>
-<li>
-<p><a href="%7B%7Bsite.url%7D%7D/assets/ssl/JavaWebServices.pdf">Java Web Services</a></p>
+<li>Applied Cryptography, Second Edition: Protocols, Algorthms, and Source Code in C</li>
+<li>SSL and TLS Theory and Practice</li>
+<li>Java Web Services</li>
+<li><a href="https://www.amazon.in/Wireshark-Network-Analysis-Second-Certified-ebook/dp/B008G65O7O" target="_blank" rel="noopener noreferrer">Wireshark Network Analysis</a>
 </li>
 </ul>
-
     
   </div>
 

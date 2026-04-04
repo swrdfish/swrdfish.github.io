@@ -3,6 +3,7 @@ languageCode = 'en-us'
 title = 'Swrdfish'
 publishDir = 'docs'
 pluralizeListTitles = false
+summaryLength = 30
 
 
 [taxonomies]
@@ -23,8 +24,7 @@ hideHeader = false
 # Intro on main page, content is markdown
 homeIntroTitle = 'Hi!'
 homeIntroContent = """
-I am an Indian Software Engineer with a good foundation in computer science.
-I am interested in a range of topics, including economics, architecture, city planning, and art.
+This is my personal journal where I write about tech, travel and other things that I find interesting.
 """
 
 # Collection to display on home
@@ -69,7 +69,8 @@ url = "/bookmarks"
 # Syntax highligth on code blocks
 [markup]
 [markup.highlight]
-style = 'algol'
+style = 'github'
+noClasses = false
 
 # Giscus comments
 [params.giscus]
