@@ -134,6 +134,33 @@ hr {
   margin-right: var(--header-menu-side-gap);
 }
 
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: var(--header-menu-side-gap);
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--content-primary);
+}
+
+.icon-sun {
+  display: block;
+}
+
+.icon-moon {
+  display: none;
+}
+
+.dark .icon-sun {
+  display: none;
+}
+
+.dark .icon-moon {
+  display: block;
+}
+
 .header-logo-title {
   display: flex;
   align-items: center;
