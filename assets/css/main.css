@@ -171,6 +171,7 @@ footer a {
 /* Posts list  */
 
 .post-line {
+  position: relative;
   margin-bottom: .5rem;
   display: flex;
   align-items: baseline;
@@ -208,7 +209,13 @@ footer a {
   color: var(--content-primary);
 }
 
-.line-title a:hover {
+.line-title a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.post-line:hover .line-title a {
   text-decoration: underline;
 }
 
@@ -297,6 +304,8 @@ footer a {
 .single-readtime {
   margin-top: .5rem;
   color: var(--content-secondary);
+  font-family: monospace;
+  font-size: small;
 }
 
 .single-summary {
