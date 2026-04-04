@@ -127,5 +127,12 @@
       <guid>https://swrdfish.github.io/tech/2014-12-22-building-the-blog-using-jekyll/</guid>
       <description>&lt;p&gt;So, I&amp;rsquo;m going to give a final shot at blogging.&#xA;I&amp;rsquo;ve used Wordpress, Blogger, Tumblr previousl but have never been able to be stick to it. Being a regular blogger has been on my todo list for like forever. But till now I&amp;rsquo;ve only written a post or two in each platform.&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>Sitemap</title>
+      <link>https://swrdfish.github.io/sitemap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://swrdfish.github.io/sitemap/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

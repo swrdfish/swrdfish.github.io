@@ -154,14 +154,22 @@ hr {
   margin-top: 0;
 }
 
+/* Sitemap */
+
+.sitemap-date {
+  color: var(--content-secondary);
+  font-size: small;
+}
+
 /* Footer */
 
 footer {
   font-size: small;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   max-height: var(--footer-height);
+  padding: 0 var(--main-padding);
 }
 
 footer a {

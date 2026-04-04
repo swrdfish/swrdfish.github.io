@@ -1,0 +1,35 @@
+{{ define "main" }}
+
+<div class="list-container">
+
+    {{ partial "breadcrumbs.html" . }}
+
+    <h1>{{ .Title }}</h1>
+
+    {{ $nonBookmarks := where site.RegularPages "Section" "ne" "bookmarks" }}
+
+    {{ $sectionNames := dict "tech" "Posts" "travel" "Travel" }}
+
+    {{ range ($nonBookmarks.GroupBy "Section") }}
+    {{ $section := .Key }}
+    {{ if .Pages }}
+    <h2>{{ index $sectionNames $section | default ($section | title) }}</h2>
+    <ul>
+        {{ range .Pages.ByDate.Reverse }}
+        <li>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            <span class="sitemap-date"> — {{ .Date.Format "2 Jan 2006" }}</span>
+        </li>
+        {{ end }}
+    </ul>
+    {{ end }}
+    {{ end }}
+
+    <h2>Bookmarks</h2>
+    <ul>
+        <li><a href="/bookmarks/">All Bookmarks</a></li>
+    </ul>
+
+</div>
+
+{{ end }}
