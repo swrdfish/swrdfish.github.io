@@ -13,7 +13,7 @@
       <link>https://swrdfish.github.io/tech/2015-06-05-powershell-on-steroids/</link>
       <pubDate>Fri, 05 Jun 2015 14:42:00 +0000</pubDate>
       <guid>https://swrdfish.github.io/tech/2015-06-05-powershell-on-steroids/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;m a linux/unix guy, I&amp;rsquo;ve always had heated debates with my &amp;ldquo;Windows&amp;rdquo; friends about how good the unix environment is and how the terminal can do magical things..&#xA;But today I was hit on the face, real hard. This &lt;a href=&#34;https://software.intel.com/en-us/blogs/2014/06/17/giving-powershell-a-persistent-history-of-commands&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;guide&lt;/a&gt;&#xA; show us the steps to make powershell as good as if not even better than bash is some ways.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I&amp;rsquo;m a linux/unix guy, I&amp;rsquo;ve always had heated debates with my &amp;ldquo;Windows&amp;rdquo; friends about how good the unix environment is and how the terminal can do magical things..&#xA;But today I was hit on the face, real hard. This &lt;a href=&#34;https://web.archive.org/web/20140821134756/https://software.intel.com/en-us/blogs/2014/06/17/giving-powershell-a-persistent-history-of-commands&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;guide&lt;/a&gt;&#xA; show us the steps to make powershell as good as if not even better than bash is some ways.&lt;/p&gt;</description>
     </item>
     <item>
       <title>HTTPS: Securing java web services</title>
