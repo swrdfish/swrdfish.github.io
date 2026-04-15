@@ -14,7 +14,7 @@ I was a small town kid, oblivious to the outside world. At university in Calcutt
 
 This was my first international trip, the first stamp on the passport. 
 
-​​We flew through Doha. The airports in India are new and they are good, so Doha was not that big of a change. Then we landed at Berlin Tegel. It was a small airport. But it was different.  The people were different. At Doha the crowd was familiar but in Berlin it changed. The men were tall and white and strong. The doors were heavy. The grab handles were solid and thick. The fixtures and fittings had a sturdiness to them that I noticed right away. Built for strong men I guess.
+​​We flew through Doha. The airports in India are new and they are good, so Doha was not a big change. Then we landed at Berlin Tegel. It was a small airport. But it was different. The people were different. At Doha the crowd was familiar but in Berlin it changed. The men were tall and white and strong. The doors were heavy. The grab handles were solid and thick. The fixtures and fittings had a sturdiness to them that I noticed right away. Built for strong men I guess.
 
 The immigration officer was warm. That helped. We came outside. Two of our senior managers from the Berlin office, Thomas and Alex, were there to meet us. We got into their car and they drove us through the city.
 
@@ -22,7 +22,9 @@ The roads were wide and clean and there was no dust. It was summer and the sky w
 
 I had known the West was rich and the infrastructure would be better. But knowing it and seeing it are different things. Once, in the early 1970s, N. R. Narayana Murthy went to France as a young man and came back talking about clean roads and trains that ran on time and people who were well-clothed and well-fed. Sitting in that car with my head out the window in Berlin, almost fifty years after him, I understood exactly what he had felt.
 
-We went to the office that afternoon. The doors were large and the furniture was solid. The street outside was beautiful. The footpaths were clean and the parks were kept. There were cafes and the cafes had chairs on the pavements. The old university buildings had statues on them. Everything was pristine. India is not what it was. We do not go hungry anymore. But the roads are not clean. The waste is not managed. Many people still have no proper housing and some are not well-fed or well-clothed. That is still true.
+We went to the office that afternoon. The windows were large and the furniture was solid. The street outside was beautiful. The footpaths were clean and the parks well kept. There were cafes and the cafes had chairs on the pavements. The old university buildings had statues on them. Everything was pristine. 
+
+India is not what it was. We do not go hungry anymore. But the roads are not clean. The waste is not managed. Many people still have no proper housing and some are not well-fed or well-clothed. That is still true.
 
 We stayed two weeks. We went to Potsdam and walked through the Sanssouci palace and its gardens. We drank beer in a beer garden in the afternoon sun. Every city should have beer gardens. We took a boat along the Spree and watched the city go by from the water. We went to Museum Island, admired the art work in the galleries. We got a good view of the city from the Berliner Dom. 
 
