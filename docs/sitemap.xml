@@ -26,6 +26,12 @@
     <loc>https://swrdfish.github.io/bookmarks/steipete/</loc>
     <lastmod>2026-03-31T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://swrdfish.github.io/travel/berlin-2017/</loc>
+    <lastmod>2017-09-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://swrdfish.github.io/travel/</loc>
+    <lastmod>2017-09-17T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://swrdfish.github.io/tech/2015-06-05-powershell-on-steroids/</loc>
     <lastmod>2015-06-05T14:42:00+00:00</lastmod>
   </url><url>
@@ -105,7 +111,5 @@
     <lastmod>2014-12-22T16:34:34+00:00</lastmod>
   </url><url>
     <loc>https://swrdfish.github.io/sitemap/</loc>
-  </url><url>
-    <loc>https://swrdfish.github.io/travel/</loc>
   </url>
 </urlset>

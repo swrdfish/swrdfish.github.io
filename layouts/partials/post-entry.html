@@ -15,7 +15,10 @@
         </p>
 
         {{ if .Site.Params.listSummaries }}
-        <div class="line-summary"> {{ .Summary }} </div>
+        <div class="line-summary"> 
+            {{ .Summary }} 
+            <a class="read-more" href="{{ .RelPermalink }}">Continue reading →</a>
+        </div>
         {{ end }}
     </div>
 </div>

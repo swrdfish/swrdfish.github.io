@@ -1,0 +1,25 @@
+{{ $dir := .Get "dir" }}
+{{ $captionsRaw := .Get "captions" | default "" }}
+{{ $captions := split $captionsRaw "|" }}
+{{ $images := readDir (printf "static%s" $dir) }}
+
+{{/* collect only image files */}}
+{{ $imageFiles := slice }}
+{{ range $images }}
+  {{ $ext := lower (path.Ext .Name) }}
+  {{ if or (eq $ext ".jpg") (eq $ext ".jpeg") (eq $ext ".png") (eq $ext ".webp") (eq $ext ".gif") }}
+    {{ $imageFiles = $imageFiles | append . }}
+  {{ end }}
+{{ end }}
+
+<div class="gallery">
+  {{ range $i, $img := $imageFiles }}
+  {{ $caption := index $captions $i | default "" }}
+  <a class="gallery-item" href="{{ $dir }}/{{ $img.Name }}" target="_blank" rel="noopener">
+    <img src="{{ $dir }}/{{ $img.Name }}" alt="{{ if $caption }}{{ $caption }}{{ else }}{{ $img.Name }}{{ end }}" loading="lazy">
+    {{ if $caption }}
+    <span class="gallery-caption">{{ $caption }}</span>
+    {{ end }}
+  </a>
+  {{ end }}
+</div>
