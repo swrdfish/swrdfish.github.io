@@ -7,14 +7,14 @@ tags: []
 
 ![View from the Berliner Dom](/travel/berlin/IMG_1304.jpg "View from the top of the Berliner Dom")
 
-In 2017, out of sheer coincidence I got the opportunity to travel to Berlin. My manager was expecting a baby that left a seat vacant for me. I had joined the company just a year back, straight out of university.
+In 2017, out of sheer coincidence I got the opportunity to travel to Berlin. My manager was expecting a baby that left a seat vacant for me.
 
 <!--more-->
-I was a small town kid, oblivious to the outside world. At university in Calcutta I got a little of the city, but the campus was on the outskirts. Calcutta (now Kolkata), in spite of being the colonial capital of the British Raj, was mostly narrow alleys and crowded warrens. India was not as poor as it had been. But it was still poor, a  per capita GDP of around 2000. Most of the money was in Bangalore and Hyderabad, cities I had never visited. I did not have much money of my own either. I should have borrowed some and enjoyed the trip better. At least I would have had better clothes.
+I was a small town kid, oblivious to the outside world. At university in Calcutta I got a little of the city, but the campus was on the outskirts. Calcutta (now Kolkata), in spite of being the colonial capital of the British Raj, was mostly narrow alleys and crowded warrens. India was not as poor as it had been. But it was still poor (per capita GDP of around 2000usd). Most of the money was in Bangalore and Hyderabad, cities I had never visited. I did not have much money of my own either. I should have borrowed some and enjoyed the trip better. At least I would have had better clothes.
 
 This was my first international trip, the first stamp on the passport. 
 
-​​We flew through Doha. The airports in India are new and they are good, so Doha was not that big of a change. Then we landed at Berlin Tegel. It was a small airport. But it was different.  The people were different. At Doha the crowd was familiar but in Berlin it changed. The men were tall and white and strong. The doors were heavy. The grab handles were solid and thick. The fixtures and fittings had a sturdiness to them that I noticed right away. Build for strong men I guess.
+​​We flew through Doha. The airports in India are new and they are good, so Doha was not that big of a change. Then we landed at Berlin Tegel. It was a small airport. But it was different.  The people were different. At Doha the crowd was familiar but in Berlin it changed. The men were tall and white and strong. The doors were heavy. The grab handles were solid and thick. The fixtures and fittings had a sturdiness to them that I noticed right away. Built for strong men I guess.
 
 The immigration officer was warm. That helped. We came outside. Two of our senior managers from the Berlin office, Thomas and Alex, were there to meet us. We got into their car and they drove us through the city.
 
