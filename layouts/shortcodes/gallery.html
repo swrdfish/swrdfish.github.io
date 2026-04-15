@@ -1,25 +1,26 @@
 {{ $dir := .Get "dir" }}
 {{ $captionsRaw := .Get "captions" | default "" }}
 {{ $captions := split $captionsRaw "|" }}
-{{ $images := readDir (printf "static%s" $dir) }}
 
-{{/* collect only image files */}}
-{{ $imageFiles := slice }}
-{{ range $images }}
-  {{ $ext := lower (path.Ext .Name) }}
-  {{ if or (eq $ext ".jpg") (eq $ext ".jpeg") (eq $ext ".png") (eq $ext ".webp") (eq $ext ".gif") }}
-    {{ $imageFiles = $imageFiles | append . }}
-  {{ end }}
-{{ end }}
+{{/* resources.Match paths are relative to assets/ — strip the leading /assets/ prefix */}}
+{{ $resourceDir := strings.TrimPrefix "/assets/" $dir }}
+{{ $images := resources.Match (printf "%s/*" $resourceDir) }}
 
 <div class="gallery">
-  {{ range $i, $img := $imageFiles }}
+  {{ range $i, $img := $images }}
+  {{ $mediaType := $img.MediaType.SubType }}
+  {{ if or (eq $mediaType "jpeg") (eq $mediaType "png") (eq $mediaType "webp") (eq $mediaType "gif") }}
+  {{ $thumb := $img.Resize "600x webp q85" }}
   {{ $caption := index $captions $i | default "" }}
-  <a class="gallery-item" href="{{ $dir }}/{{ $img.Name }}" target="_blank" rel="noopener">
-    <img src="{{ $dir }}/{{ $img.Name }}" alt="{{ if $caption }}{{ $caption }}{{ else }}{{ $img.Name }}{{ end }}" loading="lazy">
+  <a class="gallery-item" href="{{ $img.RelPermalink }}" target="_blank" rel="noopener">
+    <img src="{{ $thumb.RelPermalink }}"
+         width="{{ $thumb.Width }}" height="{{ $thumb.Height }}"
+         alt="{{ if $caption }}{{ $caption }}{{ else }}{{ $img.Name }}{{ end }}"
+         loading="lazy">
     {{ if $caption }}
     <span class="gallery-caption">{{ $caption }}</span>
     {{ end }}
   </a>
+  {{ end }}
   {{ end }}
 </div>

@@ -5,7 +5,7 @@ draft: false
 tags: []
 ---
 
-![View from the Berliner Dom](/assets/travel/berlin/IMG_1304.jpg "View from the top of the Berliner Dom")
+![View from the Berliner Dom](/travel/berlin/IMG_1304.jpg "View from the top of the Berliner Dom")
 
 In 2017, out of sheer coincidence I got the opportunity to travel to Berlin. My manager was expecting a baby that left a seat vacant for me. I had joined the company just a year back, straight out of university.
 

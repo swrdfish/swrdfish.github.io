@@ -2,143 +2,142 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Home on Swrdfish</title>
-    <link>https://swrdfish.github.io/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content in Home on Swrdfish</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 04 Apr 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://swrdfish.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Simon Willison’s Weblog</title>
-      <link>https://swrdfish.github.io/bookmarks/simonwillison/</link>
+      <link>http://localhost:1313/bookmarks/simonwillison/</link>
       <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>https://swrdfish.github.io/bookmarks/simonwillison/</guid>
+      <guid>http://localhost:1313/bookmarks/simonwillison/</guid>
       <description></description>
     </item>
     <item>
       <title>XXIIVV</title>
-      <link>https://swrdfish.github.io/bookmarks/xiivvv/</link>
+      <link>http://localhost:1313/bookmarks/xiivvv/</link>
       <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>https://swrdfish.github.io/bookmarks/xiivvv/</guid>
+      <guid>http://localhost:1313/bookmarks/xiivvv/</guid>
       <description></description>
     </item>
     <item>
       <title>マリウス</title>
-      <link>https://swrdfish.github.io/bookmarks/%E3%83%9E%E3%83%AA%E3%82%A6%E3%82%B9/</link>
+      <link>http://localhost:1313/bookmarks/%E3%83%9E%E3%83%AA%E3%82%A6%E3%82%B9/</link>
       <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>https://swrdfish.github.io/bookmarks/%E3%83%9E%E3%83%AA%E3%82%A6%E3%82%B9/</guid>
+      <guid>http://localhost:1313/bookmarks/%E3%83%9E%E3%83%AA%E3%82%A6%E3%82%B9/</guid>
       <description></description>
     </item>
     <item>
       <title>Coding Horror</title>
-      <link>https://swrdfish.github.io/bookmarks/coding-horror/</link>
+      <link>http://localhost:1313/bookmarks/coding-horror/</link>
       <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>https://swrdfish.github.io/bookmarks/coding-horror/</guid>
+      <guid>http://localhost:1313/bookmarks/coding-horror/</guid>
       <description></description>
     </item>
     <item>
       <title>Hacker News</title>
-      <link>https://swrdfish.github.io/bookmarks/hacker-news/</link>
+      <link>http://localhost:1313/bookmarks/hacker-news/</link>
       <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>https://swrdfish.github.io/bookmarks/hacker-news/</guid>
+      <guid>http://localhost:1313/bookmarks/hacker-news/</guid>
       <description></description>
     </item>
     <item>
       <title>Peter Steinberger blog</title>
-      <link>https://swrdfish.github.io/bookmarks/steipete/</link>
+      <link>http://localhost:1313/bookmarks/steipete/</link>
       <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>https://swrdfish.github.io/bookmarks/steipete/</guid>
+      <guid>http://localhost:1313/bookmarks/steipete/</guid>
       <description></description>
     </item>
     <item>
       <title>Berlin</title>
-      <link>https://swrdfish.github.io/travel/berlin-2017/</link>
+      <link>http://localhost:1313/travel/berlin-2017/</link>
       <pubDate>Sun, 17 Sep 2017 00:00:00 +0000</pubDate>
-      <guid>https://swrdfish.github.io/travel/berlin-2017/</guid>
-      <description>&lt;p&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;figure class=&#34;&#34;&gt;&#xA;&#xA;    &lt;div&gt;&#xA;        &lt;img loading=&#34;lazy&#34; alt=&#34;View from the Berliner Dom&#34; src=&#34; /assets/travel/berlin/IMG_1304.jpg&#34;&gt;&#xA;    &lt;/div&gt;&#xA;&#xA;    &#xA;    &lt;div class=&#34;caption-container&#34;&gt;&#xA;        &lt;figcaption&gt; View from the top of the Berliner Dom &lt;/figcaption&gt;&#xA;    &lt;/div&gt;&#xA;    &#xA;&lt;/figure&gt;&lt;/p&gt;&#xA;&lt;p&gt;In 2017, out of sheer coincidence I got the opportunity to travel to Berlin. My manager was expecting a baby that left a seat vacant for me. I had joined the company just a year back, straight out of university.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/travel/berlin-2017/</guid>
+      <description>&lt;p&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;figure class=&#34;&#34;&gt;&#xA;&#xA;    &lt;div&gt;&#xA;        &lt;img loading=&#34;lazy&#34; alt=&#34;View from the Berliner Dom&#34; src=&#34; /travel/berlin/IMG_1304.jpg&#34;&gt;&#xA;    &lt;/div&gt;&#xA;&#xA;    &#xA;    &lt;div class=&#34;caption-container&#34;&gt;&#xA;        &lt;figcaption&gt; View from the top of the Berliner Dom &lt;/figcaption&gt;&#xA;    &lt;/div&gt;&#xA;    &#xA;&lt;/figure&gt;&lt;/p&gt;&#xA;&lt;p&gt;In 2017, out of sheer coincidence I got the opportunity to travel to Berlin. My manager was expecting a baby that left a seat vacant for me. I had joined the company just a year back, straight out of university.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Powershell on steroids!</title>
-      <link>https://swrdfish.github.io/tech/2015-06-05-powershell-on-steroids/</link>
+      <link>http://localhost:1313/tech/2015-06-05-powershell-on-steroids/</link>
       <pubDate>Fri, 05 Jun 2015 14:42:00 +0000</pubDate>
-      <guid>https://swrdfish.github.io/tech/2015-06-05-powershell-on-steroids/</guid>
+      <guid>http://localhost:1313/tech/2015-06-05-powershell-on-steroids/</guid>
       <description>&lt;p&gt;I&amp;rsquo;m a linux/unix guy, I&amp;rsquo;ve always had heated debates with my &amp;ldquo;Windows&amp;rdquo; friends about how good the unix environment is and how the terminal can do magical things..&#xA;But today I was hit on the face, real hard. This &lt;a href=&#34;https://web.archive.org/web/20140821134756/https://software.intel.com/en-us/blogs/2014/06/17/giving-powershell-a-persistent-history-of-commands&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;guide&lt;/a&gt;&#xA; show us the steps to make powershell as good as if not even better than bash is some ways.&lt;/p&gt;</description>
     </item>
     <item>
       <title>HTTPS: Securing java web services</title>
-      <link>https://swrdfish.github.io/tech/2015-06-01-https-securing-java-web-services/</link>
+      <link>http://localhost:1313/tech/2015-06-01-https-securing-java-web-services/</link>
       <pubDate>Tue, 02 Jun 2015 15:25:34 +0000</pubDate>
-      <guid>https://swrdfish.github.io/tech/2015-06-01-https-securing-java-web-services/</guid>
+      <guid>http://localhost:1313/tech/2015-06-01-https-securing-java-web-services/</guid>
       <description>&lt;p&gt;As part of my internship project I had to learn about HTTPS, how it works and how to use HTTPS to secure SOAP based web services written in java.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Lexmark: Week 2</title>
-      <link>https://swrdfish.github.io/tech/2015-06-01-lexmark-week-2/</link>
+      <link>http://localhost:1313/tech/2015-06-01-lexmark-week-2/</link>
       <pubDate>Mon, 01 Jun 2015 15:36:09 +0000</pubDate>
-      <guid>https://swrdfish.github.io/tech/2015-06-01-lexmark-week-2/</guid>
+      <guid>http://localhost:1313/tech/2015-06-01-lexmark-week-2/</guid>
       <description>&lt;p&gt;So one more week just flew past! Progress: not much.. I spent the whole week studying..&lt;/p&gt;</description>
     </item>
     <item>
       <title>Lexmark: Week 1</title>
-      <link>https://swrdfish.github.io/tech/2015-05-22-lexmark-week-1/</link>
+      <link>http://localhost:1313/tech/2015-05-22-lexmark-week-1/</link>
       <pubDate>Fri, 22 May 2015 11:26:59 +0000</pubDate>
-      <guid>https://swrdfish.github.io/tech/2015-05-22-lexmark-week-1/</guid>
+      <guid>http://localhost:1313/tech/2015-05-22-lexmark-week-1/</guid>
       <description>&lt;p&gt;So, the summer vacation has started, finally! But no relaxing this time around. I&amp;rsquo;m doing an internship at a company called &lt;a href=&#34;http://www.lexmark.com/en_in.html&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Lexmark&lt;/a&gt;&#xA;. The first week here has been pretty interesting.. the people here are cool, friendly. The work environment is also awsome, there are no restrictions or visible structure in the organisation. Very different from what my perception was about an Information Technology company.&lt;/p&gt;</description>
     </item>
     <item>
       <title>ssh and git through tor</title>
-      <link>https://swrdfish.github.io/tech/2015-01-08-ssh-and-git-through-tor/</link>
+      <link>http://localhost:1313/tech/2015-01-08-ssh-and-git-through-tor/</link>
       <pubDate>Thu, 08 Jan 2015 00:00:00 +0000</pubDate>
-      <guid>https://swrdfish.github.io/tech/2015-01-08-ssh-and-git-through-tor/</guid>
+      <guid>http://localhost:1313/tech/2015-01-08-ssh-and-git-through-tor/</guid>
       <description>&lt;p&gt;As I mentioned before our college network has this squid proxy which makes us spend more time configuring our tools to bypass it than doing any actual work. My goal this time was to get ssh working behind the proxy.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Django static files in Openshift</title>
-      <link>https://swrdfish.github.io/tech/2015-01-05-django-static-files-in-openshift/</link>
+      <link>http://localhost:1313/tech/2015-01-05-django-static-files-in-openshift/</link>
       <pubDate>Mon, 05 Jan 2015 00:00:00 +0000</pubDate>
-      <guid>https://swrdfish.github.io/tech/2015-01-05-django-static-files-in-openshift/</guid>
+      <guid>http://localhost:1313/tech/2015-01-05-django-static-files-in-openshift/</guid>
       <description>&lt;p&gt;To serve static files for django use &lt;a href=&#34;https://warehouse.python.org/project/whitenoise/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;whitenoise&lt;/a&gt;&#xA;.&lt;/p&gt;&#xA;&lt;p&gt;This will require you to add an environment variable &lt;code&gt;DJANGO_SETTINGS_MODULE=&amp;quot;jhinuk.settings&amp;quot;&lt;/code&gt; to your Openshift app. To do this follow the instructions &lt;a href=&#34;https://help.openshift.com/hc/en-us/articles/202399310-How-to-create-and-use-environment-variables-on-the-server-&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;here&lt;/a&gt;&#xA;&lt;/p&gt;</description>
     </item>
     <item>
       <title>IRC through tor</title>
-      <link>https://swrdfish.github.io/tech/2015-01-04-irc-through-tor/</link>
+      <link>http://localhost:1313/tech/2015-01-04-irc-through-tor/</link>
       <pubDate>Sun, 04 Jan 2015 00:00:00 +0000</pubDate>
-      <guid>https://swrdfish.github.io/tech/2015-01-04-irc-through-tor/</guid>
+      <guid>http://localhost:1313/tech/2015-01-04-irc-through-tor/</guid>
       <description>&lt;p&gt;In my college they use squid proxy with only a few open ports. This doesn&amp;rsquo;t allow us to use the irc clients. The solution is to use some application like &lt;a href=&#34;http://xchat.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;XChat&lt;/a&gt;&#xA; through &lt;a href=&#34;https://www.torproject.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Tor&lt;/a&gt;&#xA;. But most irc servers block tor exit nodes. Freenode is also not an exception. But it does allow access through tor. To get connect to freenode through tor follow the instructions &lt;a href=&#34;https://www.freenode.net/irc_servers.shtml#tor&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;here&lt;/a&gt;&#xA; and also &lt;a href=&#34;https://cortman.wordpress.com/2013/03/12/how-to-set-up-xchat-with-tor-sasl/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;here&lt;/a&gt;&#xA;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Tying out ARChon: the android app runtime for chrome</title>
-      <link>https://swrdfish.github.io/tech/2015-01-03-tying-out-android-app-runtime-no-chrome/</link>
+      <link>http://localhost:1313/tech/2015-01-03-tying-out-android-app-runtime-no-chrome/</link>
       <pubDate>Sat, 03 Jan 2015 00:00:00 +0000</pubDate>
-      <guid>https://swrdfish.github.io/tech/2015-01-03-tying-out-android-app-runtime-no-chrome/</guid>
+      <guid>http://localhost:1313/tech/2015-01-03-tying-out-android-app-runtime-no-chrome/</guid>
       <description>&lt;p&gt;Ok, following the instructions on &lt;a href=&#34;http://lifehacker.com/how-to-run-android-apps-inside-chrome-on-any-desktop-op-1637564101&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Lifehacher&lt;/a&gt;&#xA; I&amp;rsquo;ve managed to install android app runtime called &lt;a href=&#34;https://github.com/vladikoff/chromeos-apk/blob/master/archon.md&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;ARChon&lt;/a&gt;&#xA; on chrome. And the thing works great! :D&lt;/p&gt;&#xA;&lt;p&gt;Here are some screen shots:&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
     </item>
     <item>
       <title>Using jenkins on openshift</title>
-      <link>https://swrdfish.github.io/tech/2015-01-03-using-jenkins-on-openshift/</link>
+      <link>http://localhost:1313/tech/2015-01-03-using-jenkins-on-openshift/</link>
       <pubDate>Sat, 03 Jan 2015 00:00:00 +0000</pubDate>
-      <guid>https://swrdfish.github.io/tech/2015-01-03-using-jenkins-on-openshift/</guid>
-      <description>&lt;p&gt;So I have got my django app running on Openshift. (&lt;a href=&#34;https://swrdfish.github.io/tech/2014-12-29-django-on-openshift/&#34;&gt;how to run django app on Openshift&lt;/a&gt;&#xA;)&#xA;Now I wanted to automate the deployment of the app from a Github repo. The tool people use to do this is called Jenkins. So here&amp;rsquo;s the rundown of what I have been able to achieve.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/tech/2015-01-03-using-jenkins-on-openshift/</guid>
+      <description>&lt;p&gt;So I have got my django app running on Openshift. (&lt;a href=&#34;http://localhost:1313/tech/2014-12-29-django-on-openshift/&#34;&gt;how to run django app on Openshift&lt;/a&gt;&#xA;)&#xA;Now I wanted to automate the deployment of the app from a Github repo. The tool people use to do this is called Jenkins. So here&amp;rsquo;s the rundown of what I have been able to achieve.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Django on Openshift</title>
-      <link>https://swrdfish.github.io/tech/2014-12-29-django-on-openshift/</link>
+      <link>http://localhost:1313/tech/2014-12-29-django-on-openshift/</link>
       <pubDate>Mon, 29 Dec 2014 00:00:00 +0000</pubDate>
-      <guid>https://swrdfish.github.io/tech/2014-12-29-django-on-openshift/</guid>
+      <guid>http://localhost:1313/tech/2014-12-29-django-on-openshift/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://www.openshift.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Openshift&lt;/a&gt;&#xA; is a new app hosting service from RedHat which offers a great free package. Till now I&amp;rsquo;ve used Heroku to host some apps and its great but it doesn&amp;rsquo;t provide any free database (well it does but you&amp;rsquo;ll have to enter your credit card details which in India few people have). Also the filesystem of heroku is such that it refreshes every 24hrs deleting every thing except the repo. So heroku is great for testing but hosting something with somesort of a database is not possible unless you pay.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Another attempt at blogging.</title>
-      <link>https://swrdfish.github.io/tech/2014-12-22-building-the-blog-using-jekyll/</link>
+      <link>http://localhost:1313/tech/2014-12-22-building-the-blog-using-jekyll/</link>
       <pubDate>Mon, 22 Dec 2014 16:34:34 +0000</pubDate>
-      <guid>https://swrdfish.github.io/tech/2014-12-22-building-the-blog-using-jekyll/</guid>
+      <guid>http://localhost:1313/tech/2014-12-22-building-the-blog-using-jekyll/</guid>
       <description>&lt;p&gt;So, I&amp;rsquo;m going to give a final shot at blogging.&#xA;I&amp;rsquo;ve used Wordpress, Blogger, Tumblr previousl but have never been able to be stick to it. Being a regular blogger has been on my todo list for like forever. But till now I&amp;rsquo;ve only written a post or two in each platform.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Sitemap</title>
-      <link>https://swrdfish.github.io/sitemap/</link>
+      <link>http://localhost:1313/sitemap/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://swrdfish.github.io/sitemap/</guid>
+      <guid>http://localhost:1313/sitemap/</guid>
       <description></description>
     </item>
   </channel>
