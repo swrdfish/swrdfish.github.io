@@ -161,6 +161,18 @@ hr {
   display: block;
 }
 
+.rss-link {
+  display: flex;
+  align-items: center;
+  margin-left: var(--header-menu-side-gap);
+  color: var(--content-primary);
+  line-height: 1;
+}
+
+.rss-link:hover {
+  opacity: 0.7;
+}
+
 .header-logo-title {
   display: flex;
   align-items: center;
