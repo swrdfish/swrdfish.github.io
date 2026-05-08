@@ -32,15 +32,15 @@
 
 {{/* Collection Section */}}
 
-{{ if .Site.Params.homeCollection }}
+{{ if or .Site.Params.homeCollection .Site.Params.homeCollections }}
 
 <div class="list-container">
     {{ with .Site.Params.homeCollectionTitle}}
     <h1> {{ . }} </h1>
     {{ end }}
 
-    {{ $pages := where .Site.RegularPages "Section" .Site.Params.homeCollection
-    }}
+    {{ $sections := .Site.Params.homeCollections | default (slice .Site.Params.homeCollection) }}
+    {{ $pages := where .Site.RegularPages "Section" "in" $sections }}
 
     {{ $paginationSize := 1}}
     {{ if (gt .Site.Params.paginationSize 0) }}

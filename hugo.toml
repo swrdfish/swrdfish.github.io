@@ -29,7 +29,7 @@ This is my personal journal where I write about tech, travel and other things th
 
 # Collection to display on home
 homeCollectionTitle = 'Posts'
-homeCollection = 'tech'
+homeCollections = ['tech', 'travel']
 
 # Lists parameters
 paginationSize = 50
