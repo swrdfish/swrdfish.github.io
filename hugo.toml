@@ -65,6 +65,10 @@ url = "/travel"
 name = "bookmarks"
 url = "/bookmarks"
 
+[[params.menu]]
+name = "projects"
+url = "/projects"
+
 
 # Syntax highligth on code blocks
 [markup]

@@ -1,1 +1,12 @@
 /* Place custom css here */
+
+/* Narrow images, e.g. tall screenshots: add #narrow to the image URL. */
+.img-narrow div {
+  display: flex;
+  justify-content: center;
+}
+
+.img-narrow img {
+  width: 100%;
+  max-width: 360px;
+}
