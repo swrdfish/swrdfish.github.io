@@ -27,7 +27,7 @@
 
 
 
-<link rel="stylesheet" href="/assets/combined.min.ca7136d7b8914926fb00ab077a36d93685c7a4d5e3c257f9ad4a2c962df3ccf2.css" media="all">
+<link rel="stylesheet" href="/assets/combined.min.fc468dc3d258f418dd78c742fc0b780990be835cba5538829e1682809bd3225e.css" media="all">
 
 
 
@@ -61,6 +61,12 @@
 
         <div class="header-actions">
             
+            <a href="https://swrdfish.github.io/index.xml" class="rss-link" aria-label="RSS feed" title="RSS feed">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/>
+                </svg>
+            </a>
+            
 
             <button class="theme-toggle" onclick="invertBody()" aria-label="Toggle dark mode">
                 <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -70,10 +76,19 @@
                     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
                 </svg>
             </button>
+
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu" aria-expanded="false" aria-controls="header-nav">
+                <svg class="icon-menu" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+                </svg>
+                <svg class="icon-close" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </button>
         </div>
     </div>
 
-    <div class="flex header-nav">
+    <div class="flex header-nav" id="header-nav">
         
 
         
@@ -275,6 +290,17 @@
     document.body.classList.toggle("dark");
     document.body.classList.toggle("light");
   }
+
+  function toggleMenu() {
+    const open = document.body.classList.toggle("menu-open");
+    document.querySelector(".menu-toggle").setAttribute("aria-expanded", open);
+  }
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && document.body.classList.contains("menu-open")) {
+      toggleMenu();
+    }
+  });
 
   if (isAuto()) {
     window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
