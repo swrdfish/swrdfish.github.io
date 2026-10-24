@@ -1,0 +1,25 @@
+{{/*
+Overrides Hugo's built-in figure shortcode. Inside figures, width sets the
+share of the row; without it, the image's aspect ratio is used so that
+images in a row come out the same height.
+*/}}
+{{ $src := .Get "src" }}
+{{ $alt := .Get "alt" | default (.Get "caption") }}
+{{ $image := .Page.Resources.Get $src }}
+
+{{ $grow := "" }}
+{{ with .Get "width" }}
+{{ $grow = strings.TrimSuffix "%" . }}
+{{ else }}
+{{ with $image }}
+{{ $grow = div (float .Width) .Height }}
+{{ end }}
+{{ end }}
+
+<figure class="figures-item" {{ with $grow }}style="flex-grow: {{ . }}"{{ end }}>
+    <img loading="lazy" src="{{ with $image }}{{ .RelPermalink }}{{ else }}{{ $src }}{{ end }}" alt="{{ $alt }}"
+        {{ with $image }}width="{{ .Width }}" height="{{ .Height }}"{{ end }} />
+    {{ with .Get "caption" }}
+    <figcaption>{{ . | markdownify }}</figcaption>
+    {{ end }}
+</figure>

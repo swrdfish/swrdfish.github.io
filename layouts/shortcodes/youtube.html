@@ -1,0 +1,9 @@
+{{/* Overrides Hugo's built-in youtube shortcode to frame the video */}}
+{{ $id := .Get "id" | default (.Get 0) }}
+{{ $title := .Get "title" | default "YouTube video" }}
+
+<div class="youtube-video-container">
+    <iframe src="https://www.youtube.com/embed/{{ $id }}" title="{{ $title }}"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
