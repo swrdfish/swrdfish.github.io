@@ -1,29 +1,17 @@
 @font-face {
-    font-family: 'Literata';
-    src: url('/fonts/Literata/Literata-Light.woff2') format('woff2');
-    font-weight: light;
+    font-family: 'Inter';
+    src: url('/fonts/Inter/Inter-Variable-normal.woff2') format('woff2');
+    font-weight: 100 900;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-    font-family: 'Literata';
-    src: url('/fonts/Literata/Literata-LightItalic.woff2') format('woff2');
-    font-weight: light;
+    font-family: 'Inter';
+    src: url('/fonts/Inter/Inter-Variable-italic.woff2') format('woff2');
+    font-weight: 100 900;
     font-style: italic;
-}
-
-@font-face {
-    font-family: 'Literata';
-    src: url('/fonts/Literata/Literata-SemiBold.woff2') format('woff2');
-    font-weight: bold;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Literata';
-    src: url('/fonts/Literata/Literata-SemiBoldItalic.woff2') format('woff2');
-    font-weight: bold;
-    font-style: italic;
+    font-display: swap;
 }
 
 @font-face {
