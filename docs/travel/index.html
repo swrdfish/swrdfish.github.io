@@ -28,7 +28,7 @@
 
 
 
-<link rel="stylesheet" href="/assets/combined.min.ad3b7d6b8d31c86a7d8dbaac02cfc3777b121be8aa177e6ef94b8767b2c975e4.css" media="all">
+<link rel="stylesheet" href="/assets/combined.min.2a51906a36093817cb132d2fdc0b20a0e4789c1488cbda4ae461c96d9e4681e8.css" media="all">
 
 
 
@@ -54,12 +54,33 @@
 
     
 
-    <a href="/" class="header-logo-title">
-        <img src="/swordfish.svg" alt="swordfish logo" class="header-logo" />
-        <h1 class="header-title">Swrdfish</h1>
-    </a>
+    <div class="header-top">
+        <a href="/" class="header-logo-title">
+            <img src="/swordfish.svg" alt="swordfish logo" class="header-logo" />
+            <h1 class="header-title">Swrdfish</h1>
+        </a>
 
-    <div class="flex">
+        <div class="header-actions">
+            
+            <a href="https://swrdfish.github.io/travel/index.xml" class="rss-link" aria-label="RSS feed" title="RSS feed">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/>
+                </svg>
+            </a>
+            
+
+            <button class="theme-toggle" onclick="invertBody()" aria-label="Toggle dark mode">
+                <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                </svg>
+                <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div class="flex header-nav">
         
 
         
@@ -101,22 +122,6 @@
         
         
 
-        
-        <a href="https://swrdfish.github.io/travel/index.xml" class="rss-link" aria-label="RSS feed" title="RSS feed">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/>
-            </svg>
-        </a>
-        
-
-        <button class="theme-toggle" onclick="invertBody()" aria-label="Toggle dark mode">
-            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-            </svg>
-            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-            </svg>
-        </button>
     </div>
 
     
