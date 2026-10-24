@@ -4,6 +4,7 @@ title = 'Swrdfish'
 publishDir = 'docs'
 pluralizeListTitles = false
 summaryLength = 30
+enableRobotsTXT = true
 
 
 [taxonomies]
