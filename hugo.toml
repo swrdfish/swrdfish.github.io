@@ -48,6 +48,11 @@ url = "https://www.linkedin.com/in/ghoshbinayak/"
 name = "github"
 url = "https://github.com/swrdfish"
 
+[[params.social]]
+name = "x"
+title = "X (Twitter)"
+url = "https://x.com/binayak_ghosh"
+
 # Main menu pages
 [[params.menu]]
 name = "home"
