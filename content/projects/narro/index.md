@@ -3,6 +3,7 @@ title = 'Narro'
 date = 2026-10-23
 summary = 'A Chrome extension that reads web pages aloud with natural AI voices, in the cloud or entirely in your browser.'
 draft = false
+image = 'player.png'
 +++
 
 I wanted a read-aloud extension that sounds like a person, not a 2010 GPS. The ones I tried used

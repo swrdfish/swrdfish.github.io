@@ -1,0 +1,28 @@
+<div class="project-line">
+
+    {{/* Use the image named in front matter, else the first image in the bundle */}}
+    {{ $image := "" }}
+    {{ with .Params.image }}
+    {{ $image = $.Resources.Get . }}
+    {{ else }}
+    {{ $image = index (.Resources.ByType "image") 0 }}
+    {{ end }}
+
+    {{ with $image }}
+    {{ $thumb := .Fill "640x400 TopLeft webp" }}
+    <img class="project-image" loading="lazy" src="{{ $thumb.RelPermalink }}"
+        width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" alt="{{ $.Title }}" />
+    {{ end }}
+
+    <div>
+        <p class="line-title">
+            <a href="{{ .RelPermalink }}">
+                {{ .Title }}
+            </a>
+        </p>
+
+        <div class="line-summary project-summary">
+            {{ .Summary }}
+        </div>
+    </div>
+</div>
