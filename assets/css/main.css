@@ -128,8 +128,24 @@ hr {
   margin-bottom: var(--header-bottom-gap);
 }
 
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+}
+
+.header-nav {
+  flex-wrap: wrap;
+}
+
 .header p {
   font-family: monospace;
+  white-space: nowrap;
   margin-top: var(--header-menu-top-gap);
   margin-right: var(--header-menu-side-gap);
 }
