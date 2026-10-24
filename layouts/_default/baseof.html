@@ -55,6 +55,17 @@
     document.body.classList.toggle("light");
   }
 
+  function toggleMenu() {
+    const open = document.body.classList.toggle("menu-open");
+    document.querySelector(".menu-toggle").setAttribute("aria-expanded", open);
+  }
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && document.body.classList.contains("menu-open")) {
+      toggleMenu();
+    }
+  });
+
   if (isAuto()) {
     window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
   }
