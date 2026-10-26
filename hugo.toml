@@ -10,8 +10,9 @@ enableRobotsTXT = true
 [taxonomies]
 tag = 'tags'
 
-# Google analytics code
-# googleAnalytics = "G-xxxxxxxxx"
+# Google analytics
+[services.googleAnalytics]
+ID = 'G-EPPPPZ13QG'
 
 [params]
 # Meta description
